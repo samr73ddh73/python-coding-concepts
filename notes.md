@@ -177,6 +177,154 @@ print("-".join(s))  # h-e-l-l-o- -w-o-r-l-d
 ```
 ```
 
+
+```markdown
+# 🧱 Python Classes: Quick Revision Guide
+
 ---
 
-Let me know when you're ready and I can do the same for **lists**, **dicts**, or **loops/conditionals** too!
+## 🏗️ 1. Creating a Class
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name     # instance variable
+        self.age = age       # instance variable
+
+    def greet(self):
+        print(f"Hello, I'm {self.name} and I'm {self.age} years old.")
+```
+
+- `__init__` is the constructor
+- `self` refers to the current object (like `this` in JS/TS)
+
+---
+
+## 👷‍♀️ 2. Creating an Object
+
+```python
+p1 = Person("Sam", 25)
+p1.greet()     # Hello, I'm Sam and I'm 25 years old.
+```
+
+---
+
+## 🛠 3. Instance vs Class Variables
+
+```python
+class Dog:
+    species = "Canine"      # class variable (shared by all instances)
+
+    def __init__(self, name):
+        self.name = name    # instance variable (unique to each object)
+```
+
+---
+
+## 🔄 4. Magic (Dunder) Methods
+
+| Method         | Use                                |
+|----------------|-------------------------------------|
+| `__init__`     | Constructor                         |
+| `__str__`      | String representation               |
+| `__repr__`     | Debug representation                |
+| `__eq__`       | Equality (`==`)                     |
+| `__lt__`, etc. | Comparisons (`<`, `>`, `<=`, `>=`)  |
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"Point({self.x}, {self.y})"
+
+p = Point(1, 2)
+print(p)   # Point(1, 2)
+```
+
+---
+
+## 🧠 5. Inheritance
+
+```python
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def speak(self):
+        print("Dog barks")
+
+d = Dog()
+d.speak()  # Dog barks
+```
+
+- Use `super().__init__()` if parent has an `__init__`
+
+---
+
+## 🔗 6. Useful Keywords
+
+```python
+class MyClass:
+    class_var = 42
+
+    def __init__(self):
+        self.instance_var = 10
+
+    @classmethod
+    def from_class(cls):
+        return cls()
+
+    @staticmethod
+    def add(x, y):
+        return x + y
+```
+
+- `@classmethod`: operates on class, not instance
+- `@staticmethod`: no access to `self` or `cls`
+- `self`: refers to the instance
+- `cls`: refers to the class
+
+---
+
+## 🧪 7. Use Cases in DSA
+
+- Design questions (like LFU Cache, LRU Cache)
+- Custom Data Structures (`Node`, `LinkedList`)
+- OOP questions (Design Patterns, Object Design)
+
+---
+
+## 📌 8. Tips
+
+- Use `.name` or `.age` to access instance variables
+- Classes make sense when:
+  - You want to **store and organize related data**
+  - You need multiple methods to operate on the same data
+- Don’t overuse classes in DSA unless asked or needed
+
+---
+
+## 🧪 Mini Practice Example
+
+```python
+class Student:
+    def __init__(self, name, scores):
+        self.name = name
+        self.scores = scores
+
+    def average(self):
+        return sum(self.scores) / len(self.scores)
+
+s = Student("Alice", [80, 90, 100])
+print(s.average())  # 90.0
+```
+```
+
+---
+
+Let me know when you're ready for `Lists`, `Dicts`, `Recursion`, or `Modules` next 🔥  
+Or if you want class design practice questions (like custom stack, queue, etc)!
