@@ -27,6 +27,18 @@ sorted_string = ''.join(sorted(s))
 
 ---
 
+## 🔹 1. Basic Sort (in-place)
+
+```python
+nums = [5, 2, 9, 1]
+nums.sort()        # Modifies the original list
+print(nums)        # [1, 2, 5, 9]
+
+nums = [5, 2, 9, 1]
+sorted_nums = sorted(nums)
+print(nums)        # [5, 2, 9, 1]
+print(sorted_nums) # [1, 2, 5, 9]
+
 ### 🔣 `ord()` Function
 
 ```python
@@ -328,3 +340,8 @@ print(s.average())  # 90.0
 
 Let me know when you're ready for `Lists`, `Dicts`, `Recursion`, or `Modules` next 🔥  
 Or if you want class design practice questions (like custom stack, queue, etc)!
+
+## Ternary operator
+
+value_if_true if condition else value_if_false
+sum = 1 if x>0 else x
