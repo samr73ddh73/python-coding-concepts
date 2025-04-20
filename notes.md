@@ -338,10 +338,81 @@ print(s.average())  # 90.0
 
 ---
 
-Let me know when you're ready for `Lists`, `Dicts`, `Recursion`, or `Modules` next 🔥  
-Or if you want class design practice questions (like custom stack, queue, etc)!
 
 ## Ternary operator
 
 value_if_true if condition else value_if_false
 sum = 1 if x>0 else x
+
+---
+
+### 🔍 **generator expression**:
+
+```python
+''.join(c for c in s if c.isalnum())
+```
+
+- `c for c in s`: loop over each character `c` in the string `s` and returns c
+- `if c.isalnum()`: keep only if it's alphanumeric (i.e., a-z, A-Z, 0-9)
+- `''.join(...)`: combines the filtered characters into a new string with no separator
+
+✅ So this line **removes all non-alphanumeric characters**.
+
+---
+
+### 🔁 Is it often used in Python?
+
+**Yes!** It’s one of the most Pythonic ways to transform/filter data in one line. Super useful for:
+
+- Cleaning strings
+- Mapping data
+- Filtering lists/dicts
+
+---
+
+### 💡 More Examples
+
+---
+
+#### ✅ Keep only vowels in a string:
+
+```python
+''.join(c for c in s if c in 'aeiouAEIOU')
+```
+
+---
+
+#### ✅ Convert all characters to uppercase:
+
+```python
+''.join(c.upper() for c in s)
+```
+
+---
+
+#### ✅ Add 1 to every number in a list:
+
+```python
+[x + 1 for x in [1, 2, 3]]  # [2, 3, 4]
+```
+
+---
+
+#### ✅ Filter out odd numbers:
+
+```python
+[x for x in [1, 2, 3, 4, 5] if x % 2 == 0]  # [2, 4]
+```
+
+---
+
+#### ✅ Flatten a list of lists:
+
+```python
+nested = [[1, 2], [3, 4]]
+[x for sublist in nested for x in sublist]  # [1, 2, 3, 4]
+```
+
+---
+
+Would you like me to compile this into a small **“List Comprehension & Generator Cheatsheet”** in markdown for your notes?
