@@ -415,4 +415,70 @@ nested = [[1, 2], [3, 4]]
 
 ---
 
-Would you like me to compile this into a small **“List Comprehension & Generator Cheatsheet”** in markdown for your notes?
+Would you like me to compile this into a small **"List Comprehension & Generator Cheatsheet"** in markdown for your notes?
+
+---
+
+## 🌐 Global Variables in Python
+
+### When and How to Use `global`
+
+**Rule:** If a function **assigns** to a variable, Python assumes it's **local** unless you declare `global`.
+
+#### ✅ Reading (no `global` needed):
+```python
+maxVal = 10
+
+def read_it():
+    print(maxVal)  # ✅ Works fine - just reading
+```
+
+#### ✅ Writing (needs `global`):
+```python
+maxVal = 10
+
+def modify_it():
+    global maxVal  # ✅ Must declare before modifying
+    maxVal = 20    # Modifies module-level variable
+```
+
+#### ❌ Without `global` (creates local variable):
+```python
+maxVal = 10
+
+def wrong():
+    maxVal = 20  # ❌ Creates NEW local variable, doesn't modify global
+
+wrong()
+print(maxVal)  # Still 10!
+```
+
+#### ❌ Common Error:
+```python
+maxVal = 10
+
+def error():
+    maxVal = maxVal + 1  # ❌ UnboundLocalError!
+    # Python sees assignment (=) and thinks maxVal is local
+    # But we're trying to read it first (maxVal + 1)
+```
+
+### Key Points:
+- **Each function must declare `global` independently** - declaring in `main()` doesn't affect other functions
+- **Only needed when assigning** - reading is fine without it
+- **Better alternative:** Use mutable objects (list/dict) or class instead of globals
+
+#### Better Alternative (No `global` needed):
+```python
+def func():
+    max_val = [0]  # List is mutable
+
+    def helper():
+        max_val[0] = 10  # ✅ Can modify list element without 'global'
+
+    helper()
+    return max_val[0]
+```
+
+---
+
