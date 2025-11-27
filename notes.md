@@ -2,6 +2,184 @@ You got it! Here's the **entire thing in pure Markdown format**, ready to copy a
 
 ---
 
+## 🔢 String to Integer Conversion
+
+### Basic Conversion:
+```python
+s = "123"
+num = int(s)        # → 123
+```
+
+### With Base (Binary, Hex, etc.):
+```python
+int("1010", 2)      # → 10 (binary to decimal)
+int("FF", 16)       # → 255 (hex to decimal)
+int("77", 8)        # → 63 (octal to decimal)
+```
+
+### Handle Invalid Input:
+```python
+try:
+    num = int("abc")
+except ValueError:
+    print("Invalid number")
+```
+
+### Strip Whitespace:
+```python
+int("  42  ".strip())  # → 42
+```
+
+### Character to Digit:
+```python
+ch = '5'
+digit = int(ch)        # → 5
+# OR
+digit = ord(ch) - ord('0')  # → 5
+```
+
+### Integer to String:
+```python
+num = 123
+s = str(num)          # → "123"
+```
+
+### Common Use Cases in DSA:
+```python
+# Convert list of digit strings to integers
+nums = [int(x) for x in ["1", "2", "3"]]  # [1, 2, 3]
+
+# Parse input
+n = int(input())  # Read integer from stdin
+
+# Check if string is numeric before converting
+s = "123"
+if s.isdigit():
+    num = int(s)  # Safe conversion
+```
+
+---
+
+## 📊 Sorting in Python
+
+### Basic Sorting (Numbers, Strings):
+```python
+# sort() - modifies list in place
+nums = [5, 2, 9, 1]
+nums.sort()
+print(nums)  # [1, 2, 5, 9]
+
+# sorted() - returns new sorted list
+nums = [5, 2, 9, 1]
+sorted_nums = sorted(nums)
+print(nums)  # [5, 2, 9, 1] (original unchanged)
+print(sorted_nums)  # [1, 2, 5, 9]
+
+# Reverse sort
+nums.sort(reverse=True)  # [9, 5, 2, 1]
+```
+
+### Lambda Functions for Sorting:
+
+**What is Lambda?**
+Lambda = anonymous function (one-liner without name)
+
+```python
+# Regular function
+def get_first(x):
+    return x[0]
+
+# Same as lambda
+lambda x: x[0]
+```
+
+### Sort 2D Arrays/Lists:
+```python
+intervals = [[3,5], [1,3], [2,6]]
+
+# Sort by first element
+intervals.sort(key=lambda x: x[0])
+# [[1,3], [2,6], [3,5]]
+
+# Sort by second element
+intervals.sort(key=lambda x: x[1])
+# [[1,3], [3,5], [2,6]]
+
+# Sort by interval length (end - start)
+intervals.sort(key=lambda x: x[1] - x[0])
+```
+
+### Sort Tuples:
+```python
+students = [("Alice", 85), ("Bob", 92), ("Charlie", 78)]
+
+# Sort by name
+students.sort(key=lambda x: x[0])
+
+# Sort by score
+students.sort(key=lambda x: x[1])
+# [("Charlie", 78), ("Alice", 85), ("Bob", 92)]
+```
+
+### Sort with Multiple Criteria:
+```python
+intervals = [[1,5], [1,3], [2,6]]
+
+# Sort by start, then by end
+intervals.sort(key=lambda x: (x[0], x[1]))
+# [[1,3], [1,5], [2,6]]
+#   ↑ same start=1, sorted by end
+
+# Sort by start ascending, end descending
+intervals.sort(key=lambda x: (x[0], -x[1]))
+```
+
+### Common DSA Patterns:
+```python
+# Sort by length
+words = ["apple", "pie", "a", "banana"]
+words.sort(key=lambda x: len(x))
+# ["a", "pie", "apple", "banana"]
+
+# Sort by absolute value
+nums = [-5, 2, -8, 3]
+nums.sort(key=lambda x: abs(x))
+# [2, 3, -5, -8]
+
+# Sort strings by last character
+words = ["cat", "dog", "bee"]
+words.sort(key=lambda x: x[-1])
+# ["bee", "dog", "cat"]
+
+# Sort dict by value
+d = {"a": 3, "b": 1, "c": 2}
+sorted_items = sorted(d.items(), key=lambda x: x[1])
+# [("b", 1), ("c", 2), ("a", 3)]
+```
+
+### When to Use Lambda vs Function:
+```python
+# Lambda - simple one-liner
+arr.sort(key=lambda x: x[0])
+
+# Regular function - complex logic
+def custom_sort(item):
+    start, end = item
+    if start < 0:
+        return abs(start) + end
+    return start - end
+
+arr.sort(key=custom_sort)
+```
+
+### Sort Complexity:
+```python
+# TIME: O(n log n) - Python uses Timsort
+# SPACE: O(n) for sorted(), O(1) for sort()
+```
+
+---
+
 ## 🐍 Python Notes Summary
 
 ### 🧩 `defaultdict` from `collections`
