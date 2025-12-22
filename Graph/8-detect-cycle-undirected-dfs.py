@@ -14,7 +14,7 @@ def dfs(graph, start, parent, visited):
         if neighbor not in visited:
             if dfs(graph, neighbor, start, visited):  # ✅ Check result
                 return True  # ✅ Propagate cycle up
-        elif neigbor != parent:
+        elif neighbor != parent:
             return True
     return False
 
