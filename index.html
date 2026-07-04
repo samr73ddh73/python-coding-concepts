@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSA Practice Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-bracket">{</span>
+        <span class="logo-text">Interview Hub</span>
+        <span class="logo-bracket">}</span>
+      </div>
+      <span class="header-subtitle">Complete Preparation</span>
+      <!-- Section tabs -->
+      <div style="display: flex; gap: 1rem; margin-left: 2rem;">
+        <button class="section-btn active" onclick="showSection('dsa')" style="padding: 0.5rem 1rem; background: rgba(124, 58, 237, 0.15); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 6px; color: #a78bfa; cursor: pointer; font-size: 14px; font-weight: 500;">
+          DSA
+        </button>
+        <button class="section-btn" onclick="showSection('lld')" style="padding: 0.5rem 1rem; background: rgba(100, 100, 100, 0.1); border: 1px solid rgba(100, 100, 100, 0.3); border-radius: 6px; color: #999; cursor: pointer; font-size: 14px; font-weight: 500;">
+          LLD <span style="font-size: 10px; opacity: 0.7;">(coming soon)</span>
+        </button>
+        <button class="section-btn" onclick="showSection('hld')" style="padding: 0.5rem 1rem; background: rgba(100, 100, 100, 0.1); border: 1px solid rgba(100, 100, 100, 0.3); border-radius: 6px; color: #999; cursor: pointer; font-size: 14px; font-weight: 500;">
+          HLD <span style="font-size: 10px; opacity: 0.7;">(coming soon)</span>
+        </button>
+        <button class="section-btn" onclick="showSection('leadership')" style="padding: 0.5rem 1rem; background: rgba(100, 100, 100, 0.1); border: 1px solid rgba(100, 100, 100, 0.3); border-radius: 6px; color: #999; cursor: pointer; font-size: 14px; font-weight: 500;">
+          Leadership <span style="font-size: 10px; opacity: 0.7;">(coming soon)</span>
+        </button>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="stats-bar">
+        <div class="stat-chip">
+          <span class="stat-dot" style="background:#FF6B6B"></span>
+          <span id="totalTopics">0</span> Topics
+        </div>
+        <div class="stat-chip">
+          <span class="stat-dot" style="background:#4ECDC4"></span>
+          <span id="totalProblems">0</span> Problems
+        </div>
+      </div>
+      <button class="btn-ghost" id="resetBtn" title="Reset view">⟲ Reset</button>
+    </div>
+  </header>
+
+  <!-- ── Main Layout ─────────────────────────────────────── -->
+  <main class="main-layout">
+
+    <!-- Mind Map Canvas -->
+    <div class="map-area" id="mapArea">
+      <svg id="mindmapSvg" class="mindmap-svg">
+        <defs>
+          <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#7C3AED" />
+            <stop offset="100%" stop-color="#4338CA" />
+          </radialGradient>
+          <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- Rendered by JS -->
+      </svg>
+
+      <!-- Hint pill -->
+      <div class="map-hint" id="mapHint">
+        <span>✦</span> Click any topic node to explore
+      </div>
+    </div>
+
+    <!-- Detail Panel -->
+    <aside class="detail-panel" id="detailPanel">
+
+      <!-- Empty State -->
+      <div class="panel-empty" id="panelEmpty">
+        <div class="empty-orb"></div>
+        <h3>Select a topic</h3>
+        <p>Click any node in the mind map to explore its problems, patterns, and tips.</p>
+        <div class="empty-topics-preview" id="emptyTopicsPreview">
+          <!-- Filled by JS with quick-access chips -->
+        </div>
+      </div>
+
+      <!-- Topic Content -->
+      <div class="panel-content hidden" id="panelContent">
+
+        <!-- Topic Header -->
+        <div class="topic-header" id="topicHeader">
+          <button class="back-btn" id="backBtn">
+            <span class="back-arrow">←</span> All Topics
+          </button>
+          <div class="topic-hero">
+            <div class="topic-icon" id="topicIcon"></div>
+            <div class="topic-hero-text">
+              <h2 class="topic-name" id="topicName"></h2>
+              <div class="topic-badges" id="topicBadges"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll area -->
+        <div class="panel-scroll" id="panelScroll">
+
+          <!-- Tips -->
+          <section class="tips-section">
+            <div class="section-label">
+              <span class="section-icon">💡</span>
+              <span>Key Patterns & Tips</span>
+            </div>
+            <ul class="tips-list" id="tipsList"></ul>
+          </section>
+
+          <!-- Problems -->
+          <section class="problems-section">
+            <div class="section-label">
+              <span class="section-icon">🧩</span>
+              <span>Problems</span>
+              <span class="badge" id="problemCountBadge"></span>
+            </div>
+            <div class="problems-grid" id="problemsGrid"></div>
+            <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+              <a id="exploreTopicLink" href="#" style="display: inline-block; padding: 0.75rem 1.5rem; background: rgba(124, 58, 237, 0.15); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 6px; color: #a78bfa; text-decoration: none; font-size: 14px; transition: all 0.2s; cursor: pointer;">
+                Explore Full Topic →
+              </a>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ── Problem Modal ───────────────────────────────────── -->
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="modal-meta">
+          <span class="modal-difficulty" id="modalDifficulty"></span>
+          <span class="modal-num" id="modalNum"></span>
+        </div>
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="notes-header">
+          <span class="notes-icon">📋</span>
+          <span>Algorithm Notes</span>
+        </div>
+        <div class="notes-content" id="modalNotes"></div>
+        <div class="modal-footer">
+          <a class="btn-lc" id="modalLcLink" href="#" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+            </svg>
+            Open on LeetCode
+            <span class="btn-arrow">↗</span>
+          </a>
+          <button class="btn-ghost-sm" id="modalFileBtn">
+            <span>📂</span> View file path
+          </button>
+        </div>
+        <div class="file-path hidden" id="modalFilePath"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Notes Layout (hidden by default) ──────────────────── -->
+  <div class="notes-layout hidden" id="notesLayout">
+
+    <!-- Notes Sidebar -->
+    <aside class="notes-sidebar" id="notesSidebar">
+      <div class="notes-nav" id="notesNav"></div>
+    </aside>
+
+    <!-- Notes Content Area -->
+    <div class="notes-content-area" id="notesContentArea">
+      <div class="notes-empty" id="notesEmpty">
+        <div class="empty-orb" style="background:radial-gradient(circle at 35% 35%,rgba(20,184,166,0.4),rgba(6,95,70,0.1))"></div>
+        <h3>Select a note</h3>
+        <p>Pick any reference from the sidebar to read it here.</p>
+      </div>
+      <div class="notes-viewer hidden" id="notesViewer">
+        <div class="notes-viewer-header" id="notesViewerHeader"></div>
+        <div class="notes-md" id="notesMd"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="notes-data.js"></script>
+  <script src="app.js"></script>
+  <script src="notes-app.js"></script>
+</body>
+</html>
