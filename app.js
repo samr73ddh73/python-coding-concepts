@@ -55,6 +55,130 @@ TOPICS.forEach(topic => {
   emptyTopicsPreview.appendChild(chip);
 });
 
+// ── Mobile topics list ───────────────────────────────────────────────
+function renderMobileTopicsList() {
+  const grid = document.getElementById('mobileTopicsGrid');
+  if (!grid) return;
+
+  grid.innerHTML = '';
+
+  TOPICS.forEach(topic => {
+    const card = document.createElement('div');
+    card.style.cssText = `
+      background: ${hexToRgba(topic.color, 0.12)};
+      border: 1px solid ${hexToRgba(topic.color, 0.3)};
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    `;
+
+    const info = document.createElement('div');
+    info.style.cssText = `
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    `;
+
+    const emoji = document.createElement('span');
+    emoji.textContent = topic.emoji;
+    emoji.style.fontSize = '20px';
+
+    const details = document.createElement('div');
+    details.style.cssText = 'flex: 1;';
+
+    const name = document.createElement('div');
+    name.textContent = topic.name;
+    name.style.cssText = `
+      font-weight: 600;
+      color: ${topic.color};
+      font-size: 14px;
+    `;
+
+    const count = document.createElement('div');
+    count.textContent = `${topic.problems.length} problems`;
+    count.style.cssText = `
+      font-size: 12px;
+      color: rgba(226,232,240,0.6);
+      margin-top: 2px;
+    `;
+
+    details.appendChild(name);
+    details.appendChild(count);
+    info.appendChild(emoji);
+    info.appendChild(details);
+
+    const exploreBtn = document.createElement('a');
+    exploreBtn.textContent = '→';
+    exploreBtn.style.cssText = `
+      padding: 8px 12px;
+      background: ${hexToRgba(topic.color, 0.15)};
+      border: 1px solid ${hexToRgba(topic.color, 0.3)};
+      border-radius: 6px;
+      color: ${topic.color};
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    `;
+
+    exploreBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const folderNameMap = {
+        'Arrays': 'Array',
+        'Binary Search': 'BinarySearch',
+        'Linked Lists': 'LinkedList',
+        'Trees': 'Trees',
+        'Graphs': 'Graph',
+        'Dynamic Programming': 'DP',
+        'Backtracking': 'Backtracking',
+        'Sliding Window': 'Sliding window',
+        'Strings': 'Strings',
+        'Merge Intervals': 'MergeIntervals',
+        'Range Queries': 'Range-Query',
+        'Recursion': 'Recursion',
+        'Maths': 'Maths',
+        'Bit Manipulation': 'BitManipulation',
+        'Cyclic Sort': 'Cyclic Sort',
+        'Prefix Sum': 'prefixSum',
+        'Sorting': 'sorting',
+        'Google / Misc': 'google',
+        'Greedy': 'Greedy',
+        'Heap': 'Heap'
+      };
+      const folderName = folderNameMap[topic.name] || topic.name;
+      window.location.href = `dsa-topic-dynamic.html?topic=${encodeURIComponent(folderName)}`;
+    });
+
+    card.appendChild(info);
+    card.appendChild(exploreBtn);
+    grid.appendChild(card);
+  });
+}
+
+// Initialize mobile list
+renderMobileTopicsList();
+
+// Show/hide mobile view based on screen size
+function updateLayoutForScreen() {
+  const mapArea = document.getElementById('mapArea');
+  const desktopEmpty = document.getElementById('desktopEmpty');
+  const mobileView = document.getElementById('mobileTopicsView');
+  const isMobile = window.innerWidth < 768;
+
+  if (mapArea) mapArea.style.display = isMobile ? 'none' : 'flex';
+  if (desktopEmpty) desktopEmpty.style.display = isMobile ? 'none' : 'flex';
+  if (mobileView) mobileView.style.display = isMobile ? 'flex' : 'none';
+}
+
+// Update on load and resize
+updateLayoutForScreen();
+
 // ── Mind Map Rendering ──────────────────────────────────────────
 function getMapDimensions() {
   const rect = mapArea.getBoundingClientRect();
@@ -330,8 +454,9 @@ function getLabelPosition(nx, ny, cx, cy, offset) {
   return { lx, ly, anchor };
 }
 
-// Re-render mindmap when window resizes
+// Re-render mindmap and update layout when window resizes
 window.addEventListener('resize', () => {
+  updateLayoutForScreen();
   renderMindMap();
 });
 
