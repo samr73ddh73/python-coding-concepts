@@ -1,3 +1,4 @@
+from collections import defaultdict, deque
 class Solution:
     def findNumberOfComponent(self, V, edges):
         graph = self.createGraph(V, edges)
@@ -16,16 +17,19 @@ class Solution:
         while queue:
             node = queue.popleft()
             for neighbor in graph[node]:
-                visited.add(neighbor)
-                queue.append(neighbor)
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append(neighbor)
         
     def createGraph(self, V, edges):
         graph = defaultdict(list)
         for edge in edges:
-            graph[edge[0]] = edge[1]
-            graph[edge[1]] = edge[0]
+            graph[edge[0]].append(edge[1])
+            graph[edge[1]].append(edge[0])
         return graph
        
+
+Solution().findNumberOfComponent(5, [[0,1],[1,2],[3,4], [2,5], [5,6]])
 # Complexity Analysis
 # Time Complexity: O(V+E),Each vertex is visited exactly once, and each edge is processed at most twice (once from each end).
 # Space Complexity: O(V+E), To build Adjacency List.

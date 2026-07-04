@@ -33,7 +33,7 @@ KEY PROPERTIES OF BIPARTITE GRAPHS:
 
 THEOREM: A graph is bipartite ⟺ it contains NO odd-length cycles
 
-================================================================================
+====================  ============================================================
 ALGORITHM: Graph Coloring via BFS
 ================================================================================
 
@@ -189,7 +189,6 @@ class SolutionDFS:
                     return False
 
             return True
-
         # Check all components
         for i in range(len(graph)):
             if i not in color:

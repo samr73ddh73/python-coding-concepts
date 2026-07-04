@@ -424,3 +424,27 @@ When analyzing DP time complexity, always:
 
 *Last updated: For FAANG interview preparation*
 *Related: 0-1-knapsack/top-down.py, bottom-up.py, space-optimized.py*
+
+
+Cheat sheet:
+
+Is it an optimization problem?
+├─ NO → BFS/Greedy/Graph
+└─ YES: Do choices affect future options?
+    ├─ NO → Greedy
+    └─ YES: Can I define state recursively?
+        ├─ NO → Greedy/Graph
+        └─ YES: Is there overlap in subproblems?
+            ├─ NO → Recursion (no memoization)
+            └─ YES: THIS IS DP! ✓
+
+
+Can I solve this recursively with overlapping subproblems?
+├─ NO → Not DP
+└─ YES: 
+    ├─ Do I need to COUNT ways?
+    │  └─ DP (return sum of subproblems)
+    ├─ Do I need to CHECK feasibility?
+    │  └─ DP (return any/all of subproblems)
+    └─ Do I need to OPTIMIZE value?
+       └─ DP (return max/min of subproblems)

@@ -1,0 +1,1 @@
+- Always remember to add happy and Failure Scenarios in requests (error cases)

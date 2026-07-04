@@ -5,11 +5,12 @@ def countOfSubsetSum(arr, targetSum, n, dp):
         return 0
     if dp[n][targetSum]!=-1:
         return dp[n][targetSum]
+    skip, take = 0,0
     if arr[n-1] <= targetSum:
-        dp[n][targetSum] = countOfSubsetSum(arr, targetSum-arr[n-1], n-1, dp) + countOfSubsetSum(arr, targetSum, n-1, dp)
-    else:
-        dp[n][targetSum] = countOfSubsetSum(arr, targetSum, n-1, dp)
-
+        take = countOfSubsetSum(arr, targetSum-arr[n-1], n-1, dp) + countOfSubsetSum(arr, targetSum, n-1, dp)
+    # else:
+    skip = countOfSubsetSum(arr, targetSum, n-1, dp)
+    dp[n][targetSum] = skip + take
     return dp[n][targetSum]
 
 def main():
