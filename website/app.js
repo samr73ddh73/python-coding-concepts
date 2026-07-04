@@ -61,6 +61,58 @@ function getMapDimensions() {
   return { w: rect.width, h: rect.height };
 }
 
+// Get responsive sizing based on screen width
+function getResponsiveSizes() {
+  const width = window.innerWidth;
+
+  if (width < 480) {
+    // Mobile phone
+    return {
+      centerR: 26,
+      centerFontSize: 12,
+      centerSubSize: 7,
+      innerNodeR: 20,
+      outerNodeR: 18,
+      innerEmojiFontSize: 13,
+      outerEmojiFontSize: 11,
+      innerLabelFontSize: 8,
+      outerLabelFontSize: 8,
+      centerTextY: -5,
+      centerSubY: 8,
+    };
+  } else if (width < 768) {
+    // Tablet
+    return {
+      centerR: 30,
+      centerFontSize: 13,
+      centerSubSize: 8,
+      innerNodeR: 26,
+      outerNodeR: 23,
+      innerEmojiFontSize: 15,
+      outerEmojiFontSize: 12,
+      innerLabelFontSize: 9,
+      outerLabelFontSize: 9,
+      centerTextY: -6,
+      centerSubY: 9,
+    };
+  } else {
+    // Desktop
+    return {
+      centerR: 34,
+      centerFontSize: 15,
+      centerSubSize: 9,
+      innerNodeR: 32,
+      outerNodeR: 28,
+      innerEmojiFontSize: 18,
+      outerEmojiFontSize: 15,
+      innerLabelFontSize: 11,
+      outerLabelFontSize: 10,
+      centerTextY: -7,
+      centerSubY: 10,
+    };
+  }
+}
+
 function computeNodePositions() {
   const { w, h } = getMapDimensions();
   const cx = w / 2;
@@ -96,6 +148,8 @@ function computeNodePositions() {
 }
 
 function renderMindMap() {
+  const sizes = getResponsiveSizes();
+
   svg.innerHTML = `
     <defs>
       <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
@@ -140,13 +194,13 @@ function renderMindMap() {
   // Pulse ring
   const pulseRing = makeSvgEl('circle', {
     class: 'center-pulse-ring',
-    cx, cy, r: 42,
+    cx, cy, r: sizes.centerR + 8,
   });
   centerGroup.appendChild(pulseRing);
 
   // Glow circle
   const centerGlow = makeSvgEl('circle', {
-    cx, cy, r: 38,
+    cx, cy, r: sizes.centerR + 4,
     fill: 'rgba(124,58,237,0.08)',
     filter: 'url(#softGlow)',
   });
@@ -154,7 +208,7 @@ function renderMindMap() {
 
   // Main circle
   const centerCircle = makeSvgEl('circle', {
-    cx, cy, r: 34,
+    cx, cy, r: sizes.centerR,
     fill: 'url(#centerGrad)',
     stroke: 'rgba(167,139,250,0.5)',
     'stroke-width': 1.5,
@@ -164,9 +218,9 @@ function renderMindMap() {
 
   // Center text
   const centerLabel = makeSvgEl('text', {
-    x: cx, y: cy - 7,
+    x: cx, y: cy + sizes.centerTextY,
     class: 'mm-node-label',
-    style: 'font-size:15px; font-weight:800; fill:#e2e8f0; font-family:Inter,sans-serif;',
+    style: `font-size:${sizes.centerFontSize}px; font-weight:800; fill:#e2e8f0; font-family:Inter,sans-serif;`,
     'text-anchor': 'middle',
     'dominant-baseline': 'middle',
   });
@@ -174,8 +228,8 @@ function renderMindMap() {
   centerGroup.appendChild(centerLabel);
 
   const centerSub = makeSvgEl('text', {
-    x: cx, y: cy + 10,
-    style: 'font-size:9px; fill:rgba(167,139,250,0.7); font-family:Inter,sans-serif; text-anchor:middle;',
+    x: cx, y: cy + sizes.centerSubY,
+    style: `font-size:${sizes.centerSubSize}px; fill:rgba(167,139,250,0.7); font-family:Inter,sans-serif; text-anchor:middle;`,
   });
   centerSub.textContent = 'Practice Hub';
   centerGroup.appendChild(centerSub);
@@ -190,7 +244,9 @@ function renderMindMap() {
     const pos = positions[topic.id];
     const delay = 0.1 + i * 0.04;
     const isInner = topic.ring === 'inner';
-    const r = isInner ? 32 : 28;
+    const r = isInner ? sizes.innerNodeR : sizes.outerNodeR;
+    const emojiFontSize = isInner ? sizes.innerEmojiFontSize : sizes.outerEmojiFontSize;
+    const labelFontSize = isInner ? sizes.innerLabelFontSize : sizes.outerLabelFontSize;
 
     const nodeGroup = makeSvgEl('g', {
       id: `node-${topic.id}`,
@@ -202,7 +258,7 @@ function renderMindMap() {
     // Glow background (hidden until hover/selected)
     const glowCircle = makeSvgEl('circle', {
       cx: pos.x, cy: pos.y,
-      r: r + 8,
+      r: r + 6,
       fill: hexToRgba(topic.color, 0.1),
       class: 'mm-glow',
       style: 'transition: opacity 0.2s; opacity: 0;',
@@ -226,19 +282,19 @@ function renderMindMap() {
       class: 'mm-node-emoji',
       'text-anchor': 'middle',
       'dominant-baseline': 'middle',
-      style: `font-size: ${isInner ? 18 : 15}px;`,
+      style: `font-size: ${emojiFontSize}px;`,
     });
     emoji.textContent = topic.emoji;
     nodeGroup.appendChild(emoji);
 
     // Label — position it outside the circle
-    const { lx, ly, anchor } = getLabelPosition(pos.x, pos.y, cx, cy, r + 10);
+    const { lx, ly, anchor } = getLabelPosition(pos.x, pos.y, cx, cy, r + 8);
 
     const label = makeSvgEl('text', {
       x: lx, y: ly,
       'text-anchor': anchor,
       class: 'mm-node-label',
-      style: `font-size: ${isInner ? 11 : 10}px; fill: rgba(226,232,240,0.85);`,
+      style: `font-size: ${labelFontSize}px; fill: rgba(226,232,240,0.85);`,
     });
     label.textContent = shortName(topic.name);
     nodeGroup.appendChild(label);
@@ -266,13 +322,18 @@ function getLabelPosition(nx, ny, cx, cy, offset) {
   const dy = ny - cy;
   const len = Math.sqrt(dx * dx + dy * dy) || 1;
   const lx = nx + (dx / len) * offset;
-  const ly = ny + (dy / len) * offset + 4;
+  const ly = ny + (dy / len) * offset + 3;
 
   // Determine text-anchor based on horizontal position relative to center
   const anchor = dx < -10 ? 'end' : dx > 10 ? 'start' : 'middle';
 
   return { lx, ly, anchor };
 }
+
+// Re-render mindmap when window resizes
+window.addEventListener('resize', () => {
+  renderMindMap();
+});
 
 // ── Topic Selection ─────────────────────────────────────────────
 function selectTopic(id) {
