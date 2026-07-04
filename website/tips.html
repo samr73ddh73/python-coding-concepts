@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tips & Tricks - Interview Prep Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-new.css">
+  <style>
+    .tips-container { max-width: 1000px; margin: 3rem auto; padding: 2rem; }
+    .tips-header { text-align: center; margin-bottom: 3rem; }
+    .tips-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .tip-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+    .tip-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-blue);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+    }
+    .tip-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .tip-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; }
+    .tip-content { font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); }
+    .tip-content ul { margin: 0.5rem 0; padding-left: 1.5rem; }
+    .tip-content li { margin-bottom: 0.5rem; }
+    .tip-tag { display: inline-block; background: var(--accent-blue); color: white; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; margin-right: 0.5rem; margin-bottom: 0.5rem; }
+    .section-title { font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--accent-blue); }
+    .code-snippet {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      font-family: monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      color: #e8e8e8;
+    }
+    .quick-ref { background: var(--bg-secondary); border-left: 4px solid var(--accent-purple); padding: 1rem; border-radius: var(--radius-md); margin: 1rem 0; }
+    @media (max-width: 768px) {
+      .tips-container { padding: 1rem; }
+      .tips-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index-new.html" class="logo">
+        <span class="logo-icon">λ</span>
+        <span class="logo-text">Interview Hub</span>
+      </a>
+      <div class="nav-items">
+        <button class="nav-link" onclick="window.location.href='index-new.html#dsa'">Back to DSA</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="tips-container">
+    <div class="tips-header">
+      <h1>💡 Tips & Tricks</h1>
+      <p>101 essential patterns, time complexities, and coding tricks</p>
+    </div>
+
+    <!-- ARRAY TIPS -->
+    <h2 class="section-title">Array Patterns</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">👉</div>
+        <div class="tip-title">Two-Pointer Pattern</div>
+        <div class="tip-content">
+          <p>Use opposite or same-start pointers to avoid O(n²) nested loops.</p>
+          <ul>
+            <li>Start from both ends for sorted arrays</li>
+            <li>Gap technique for position-based problems</li>
+            <li>Different speeds (tortoise/hare) for cycle detection</li>
+          </ul>
+          <span class="tip-tag">O(n) time</span>
+          <span class="tip-tag">O(1) space</span>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🪟</div>
+        <div class="tip-title">Sliding Window</div>
+        <div class="tip-content">
+          <p>Maintain a window, expand right pointer, shrink left when needed.</p>
+          <ul>
+            <li>Fixed size: advance both together</li>
+            <li>Variable size: shrink when condition invalid</li>
+            <li>Track data in HashMap for efficiency</li>
+          </ul>
+          <span class="tip-tag">O(n) time</span>
+          <span class="tip-tag">O(k) space</span>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">➕</div>
+        <div class="tip-title">Prefix Sum</div>
+        <div class="tip-content">
+          <p>Precompute cumulative sums for instant range queries.</p>
+          <div class="code-snippet">prefix[i] = sum(arr[0..i-1])
+rangeSum = prefix[r+1] - prefix[l]</div>
+          <span class="tip-tag">O(n) precompute</span>
+          <span class="tip-tag">O(1) query</span>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">📍</div>
+        <div class="tip-title">In-Place Modification</div>
+        <div class="tip-content">
+          <p>Track write position instead of creating new arrays.</p>
+          <ul>
+            <li>Keep pointer to next write position</li>
+            <li>Use swap or assignment</li>
+            <li>Works when output ≤ input size</li>
+          </ul>
+          <span class="tip-tag">O(n) time</span>
+          <span class="tip-tag">O(1) space</span>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔄</div>
+        <div class="tip-title">Sorting First Strategy</div>
+        <div class="tip-content">
+          <p>Sometimes sorting first enables better algorithms.</p>
+          <ul>
+            <li>Two-pointer after sort for pairs</li>
+            <li>Intervals/merge problems</li>
+            <li>Cost: O(n log n) but enables O(n) solution</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🗺️</div>
+        <div class="tip-title">HashMap Frequency Count</div>
+        <div class="tip-content">
+          <p>Count occurrences for O(1) lookups.</p>
+          <div class="code-snippet">freq[num] = freq.get(num, 0) + 1
+if num in freq:  # O(1) check</div>
+          <span class="tip-tag">Common pattern</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TREE TIPS -->
+    <h2 class="section-title">Tree Patterns</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🔴</div>
+        <div class="tip-title">PreOrder Traversal</div>
+        <div class="tip-content">
+          <p><strong>Root → Left → Right</strong></p>
+          <p>Process node BEFORE children. Best for:</p>
+          <ul>
+            <li>Creating tree copies</li>
+            <li>Serialization/deserialization</li>
+            <li>Expression trees</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🟢</div>
+        <div class="tip-title">PostOrder Traversal</div>
+        <div class="tip-content">
+          <p><strong>Left → Right → Root</strong></p>
+          <p>Get child results FIRST. Best for:</p>
+          <ul>
+            <li>Height/depth calculation</li>
+            <li>Tree diameter</li>
+            <li>LCA problems</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔵</div>
+        <div class="tip-title">Level Order (BFS)</div>
+        <div class="tip-content">
+          <p>Process tree level by level with queue.</p>
+          <ul>
+            <li>Shortest path in unweighted tree</li>
+            <li>Right/left view</li>
+            <li>Zigzag traversal</li>
+          </ul>
+          <span class="tip-tag">Queue-based</span>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">↔️</div>
+        <div class="tip-title">InOrder + BST</div>
+        <div class="tip-content">
+          <p>InOrder of BST gives sorted sequence!</p>
+          <ul>
+            <li>Validate BST properties</li>
+            <li>Find k-th smallest</li>
+            <li>Check sorted order</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🎒</div>
+        <div class="tip-title">Return Tuple from Recursion</div>
+        <div class="tip-content">
+          <p>Return multiple values to avoid recomputation.</p>
+          <div class="code-snippet">def dfs(node):
+  # return (is_valid, value)
+  left_val, left_valid = dfs(node.left)
+  # Use both in current node</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">📋</div>
+        <div class="tip-title">Complexity Analysis</div>
+        <div class="tip-content">
+          <p><strong>Time:</strong> O(n) - visit each node<br>
+          <strong>Space:</strong> O(h) recursion stack</p>
+          <ul>
+            <li>Balanced: h = O(log n)</li>
+            <li>Skewed: h = O(n)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAPH TIPS -->
+    <h2 class="section-title">Graph Patterns</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🔎</div>
+        <div class="tip-title">DFS vs BFS</div>
+        <div class="tip-content">
+          <p><strong>Both O(V+E)</strong> but different space usage.</p>
+          <ul>
+            <li>DFS: Recursion stack O(h)</li>
+            <li>BFS: Queue O(w)</li>
+            <li>Choose by problem, not time</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔁</div>
+        <div class="tip-title">Cycle Detection States</div>
+        <div class="tip-content">
+          <p><strong>0 = White (unvisited)<br>
+          1 = Gray (in current path)<br>
+          2 = Black (fully processed)</strong></p>
+          <p>If reach gray → cycle found!</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">📍</div>
+        <div class="tip-title">Multi-Source BFS</div>
+        <div class="tip-content">
+          <p>For "distance to nearest source":</p>
+          <ul>
+            <li>Add ALL sources to queue first</li>
+            <li>Mark all visited</li>
+            <li>BFS discovers distances correctly</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">⚖️</div>
+        <div class="tip-title">Dijkstra's Must-Know</div>
+        <div class="tip-content">
+          <p>Shortest path with weights:</p>
+          <ul>
+            <li>All edges non-negative only</li>
+            <li>Min-heap priority queue</li>
+            <li>O((V+E) log V)</li>
+          </ul>
+          <p style="margin-top: 0.5rem; font-size: 0.85rem;">For negative: use Bellman-Ford</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🗺️</div>
+        <div class="tip-title">Topological Sort</div>
+        <div class="tip-content">
+          <p>For Directed Acyclic Graphs (DAGs):</p>
+          <ul>
+            <li>DFS post-order + stack</li>
+            <li>Or Kahn's algorithm (in-degree)</li>
+            <li>O(V+E)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">✅</div>
+        <div class="tip-title">Bipartite Check</div>
+        <div class="tip-content">
+          <p>2-colorable graph detection:</p>
+          <ul>
+            <li>Color nodes as you traverse</li>
+            <li>Neighbors must have different color</li>
+            <li>Works with BFS or DFS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINKEDLIST TIPS -->
+    <h2 class="section-title">LinkedList Patterns</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🐢</div>
+        <div class="tip-title">Floyd's Cycle Detection</div>
+        <div class="tip-content">
+          <p>Slow 1 step, Fast 2 steps:</p>
+          <ul>
+            <li>No cycle: fast → None</li>
+            <li>Cycle: meet at node</li>
+            <li>O(n) time, O(1) space!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🎯</div>
+        <div class="tip-title">Cycle Start Location</div>
+        <div class="tip-content">
+          <p>After detecting cycle:</p>
+          <ol style="padding-left: 1.5rem;">
+            <li>Reset slow to head</li>
+            <li>Move both 1 step</li>
+            <li>Meet at cycle start</li>
+          </ol>
+          <p style="font-size: 0.85rem;">Math: dist(head→start) = dist(meet→start)</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔢</div>
+        <div class="tip-title">Remove Nth From End</div>
+        <div class="tip-content">
+          <p>Gap of n+1 technique:</p>
+          <div class="code-snippet">fast ahead by n+1
+Move both until fast.next = None
+slow lands BEFORE target</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🪢</div>
+        <div class="tip-title">Dummy Node Pattern</div>
+        <div class="tip-content">
+          <p>Always use dummy when removing head:</p>
+          <div class="code-snippet">dummy = ListNode(0)
+dummy.next = head
+# ... operations ...
+return dummy.next</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔄</div>
+        <div class="tip-title">List Reversal</div>
+        <div class="tip-content">
+          <p>Iterative approach:</p>
+          <div class="code-snippet">prev = None
+while head:
+  nxt = head.next
+  head.next = prev
+  prev = head
+  head = nxt
+return prev</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🏪</div>
+        <div class="tip-title">LRU Cache Construction</div>
+        <div class="tip-content">
+          <p>HashMap + DoublyLinkedList:</p>
+          <ul>
+            <li>HashMap for O(1) access</li>
+            <li>LL for O(1) move/remove</li>
+            <li>Access: move to head</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BINARY SEARCH TIPS -->
+    <h2 class="section-title">Binary Search Patterns</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">📏</div>
+        <div class="tip-title">Exact vs Boundary</div>
+        <div class="tip-content">
+          <p><strong>Exact:</strong> while (left <= right)<br>
+          <strong>Boundary:</strong> while (left < right)</p>
+          <ul>
+            <li>Match returns if found</li>
+            <li>Boundary leaves at edge</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔄</div>
+        <div class="tip-title">Mid Calculation</div>
+        <div class="tip-content">
+          <p>Avoid overflow:</p>
+          <div class="code-snippet">// Safe version:
+mid = left + (right - left) // 2
+// Instead of:
+mid = (left + right) // 2</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔀</div>
+        <div class="tip-title">Rotated Array Key</div>
+        <div class="tip-content">
+          <p>One half ALWAYS sorted!</p>
+          <ul>
+            <li>Identify sorted half</li>
+            <li>Check if target in sorted</li>
+            <li>Go to that direction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">⛰️</div>
+        <div class="tip-title">Peak Element</div>
+        <div class="tip-content">
+          <p>Peak = element > neighbors</p>
+          <ul>
+            <li>Compare nums[mid] with mid+1</li>
+            <li>mid < mid+1: peak right</li>
+            <li>Else: peak left/mid</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🎯</div>
+        <div class="tip-title">Binary Search on Answer</div>
+        <div class="tip-content">
+          <p>When answer space is monotonic:</p>
+          <ul>
+            <li>Define canDo(x)</li>
+            <li>Search answer range</li>
+            <li>Not the array itself</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">⏱️</div>
+        <div class="tip-title">Complexity Analysis</div>
+        <div class="tip-content">
+          <p><strong>Standard:</strong> O(log n)</p>
+          <p><strong>Variants:</strong></p>
+          <ul>
+            <li>+ processing: O(n log n)</li>
+            <li>On answer: O(log ans * check)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DP TIPS -->
+    <h2 class="section-title">Dynamic Programming Patterns</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🤔</div>
+        <div class="tip-title">When DP Applies</div>
+        <div class="tip-content">
+          <p>Two must-haves:</p>
+          <ul>
+            <li><strong>Overlapping subproblems:</strong> Same computations repeated</li>
+            <li><strong>Optimal substructure:</strong> Solution uses subproblem solutions</li>
+          </ul>
+          <p>If both exist → DP works!</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">⬆️</div>
+        <div class="tip-title">Top-Down (Memoization)</div>
+        <div class="tip-content">
+          <p>Recurse from goal to base:</p>
+          <ul>
+            <li>More intuitive</li>
+            <li>Cache results in dict</li>
+            <li>Risk: stack overflow</li>
+          </ul>
+          <span class="tip-tag">start from goal</span>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">⬇️</div>
+        <div class="tip-title">Bottom-Up (Tabulation)</div>
+        <div class="tip-content">
+          <p>Iterate from base to goal:</p>
+          <ul>
+            <li>More efficient</li>
+            <li>Fill table iteratively</li>
+            <li>Easy space optimization</li>
+          </ul>
+          <span class="tip-tag">start from base</span>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🏷️</div>
+        <div class="tip-title">State Definition</div>
+        <div class="tip-content">
+          <p>Define clearly what dp[i] means:</p>
+          <ul>
+            <li>Prefix: ways/sum up to i?</li>
+            <li>Range: from i to j?</li>
+            <li>Capacity: using i items with w?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔗</div>
+        <div class="tip-title">Recurrence Relation</div>
+        <div class="tip-content">
+          <p>Express dp[i] using smaller states:</p>
+          <div class="code-snippet">dp[i] = f(dp[i-1], dp[i-2], ...)
+Base: dp[0], dp[1]</div>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">💾</div>
+        <div class="tip-title">Space Optimization</div>
+        <div class="tip-content">
+          <p>If only using previous row/column:</p>
+          <ul>
+            <li>Use rolling array (1D instead of 2D)</li>
+            <li>Keep only needed values</li>
+            <li>Common in 2D DP problems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERVIEW TIPS -->
+    <h2 class="section-title">Interview Pro Tips</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">📝</div>
+        <div class="tip-title">Time Complexity Hierarchy</div>
+        <div class="tip-content">
+          <div class="code-snippet">O(1) < O(log n) < O(n) < O(n log n)
+< O(n²) < O(2ⁿ) < O(n!)</div>
+          <p style="margin-top: 0.5rem;">n=1000: n² is still okay (1M ops)</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🐛</div>
+        <div class="tip-title">Edge Cases to Test</div>
+        <div class="tip-content">
+          <ul>
+            <li>Empty input</li>
+            <li>Single element</li>
+            <li>All same values</li>
+            <li>Already sorted/reverse sorted</li>
+            <li>Null/None checks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🎯</div>
+        <div class="tip-title">Problem-Solving Steps</div>
+        <div class="tip-content">
+          <ol style="padding-left: 1.5rem;">
+            <li>Understand completely</li>
+            <li>Think of examples</li>
+            <li>Brute force first</li>
+            <li>Optimize iteratively</li>
+            <li>Code carefully</li>
+            <li>Test edge cases</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">💡</div>
+        <div class="tip-title">Common Optimizations</div>
+        <div class="tip-content">
+          <ul>
+            <li>Sort first (enables two-pointer)</li>
+            <li>Hash maps (O(1) lookups)</li>
+            <li>Precomputation (prefix sums)</li>
+            <li>Space-time tradeoffs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">🔍</div>
+        <div class="tip-title">Pattern Recognition</div>
+        <div class="tip-content">
+          <p>After solving, ask:</p>
+          <ul>
+            <li>What pattern did I use?</li>
+            <li>Can it apply elsewhere?</li>
+            <li>What was the key insight?</li>
+            <li>Any better approach?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-icon">⏱️</div>
+        <div class="tip-title">Interview Time Management</div>
+        <div class="tip-content">
+          <ul>
+            <li>5 min: Understand problem</li>
+            <li>5 min: Think of approach</li>
+            <li>10 min: Code carefully</li>
+            <li>5 min: Test examples</li>
+            <li>Remaining: Optimize if time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Interview Prep Hub • Know your patterns, master your craft 🚀</p>
+    </div>
+  </footer>
+</body>
+</html>

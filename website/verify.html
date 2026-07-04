@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verification Test</title>
+  <style>
+    body { font-family: monospace; background: #0a0e27; color: #e0e6ff; padding: 2rem; }
+    pre { background: #16213e; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    .success { color: #10b981; }
+    .error { color: #ef4444; }
+    .test { margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Website Verification</h1>
+  <div id="results"></div>
+  
+  <script>
+    const results = [];
+    
+    // Test 1: JSON loads
+    fetch('all-data.json')
+      .then(r => r.json())
+      .then(data => {
+        results.push(`<div class="test"><span class="success">[OK]</span> JSON loads successfully`);
+        results.push(`<div class="test"><span class="success">[OK]</span> Topics: ${Object.keys(data).join(', ')}`);
+        
+        // Test 2: Array data
+        if (data.Array && data.Array.problems.length === 5) {
+          results.push(`<div class="test"><span class="success">[OK]</span> Array: 5 problems loaded`);
+        } else {
+          results.push(`<div class="test"><span class="error">[ERROR]</span> Array: ${data.Array?.problems.length || 0} problems (expected 5)`);
+        }
+        
+        // Test 3: Trees data
+        if (data.Trees && data.Trees.problems.length === 16) {
+          results.push(`<div class="test"><span class="success">[OK]</span> Trees: 16 problems loaded`);
+        } else {
+          results.push(`<div class="test"><span class="error">[ERROR]</span> Trees: ${data.Trees?.problems.length || 0} problems (expected 16)`);
+        }
+        
+        // Test 4: Graph data
+        if (data.Graph && data.Graph.problems.length === 22) {
+          results.push(`<div class="test"><span class="success">[OK]</span> Graph: 22 problems loaded`);
+        } else {
+          results.push(`<div class="test"><span class="error">[ERROR]</span> Graph: ${data.Graph?.problems.length || 0} problems (expected 22)`);
+        }
+        
+        // Test 5: DP categories
+        if (data.DP && data.DP.categories) {
+          const catCount = Object.keys(data.DP.categories).length;
+          results.push(`<div class="test"><span class="success">[OK]</span> DP: ${catCount} categories found`);
+          
+          let totalDPProbs = data.DP.problems.length;
+          for (const cat in data.DP.categories) {
+            totalDPProbs += data.DP.categories[cat].problems.length;
+          }
+          results.push(`<div class="test"><span class="success">[OK]</span> DP: ${totalDPProbs} total problems`);
+        }
+        
+        // Test 6: Notes
+        let totalNotes = 0;
+        for (const topic in data) {
+          if (data[topic].notes) {
+            totalNotes += data[topic].notes.length;
+          }
+        }
+        results.push(`<div class="test"><span class="success">[OK]</span> Total notes: ${totalNotes}`);
+        
+        // Test 7: Dynamic page accessibility
+        fetch('dsa-topic-dynamic.html')
+          .then(r => r.text())
+          .then(html => {
+            if (html.includes('loadData')) {
+              results.push(`<div class="test"><span class="success">[OK]</span> Dynamic page has loadData function`);
+            } else {
+              results.push(`<div class="test"><span class="error">[ERROR]</span> Dynamic page missing loadData`);
+            }
+            
+            document.getElementById('results').innerHTML = results.join('');
+            results.push(`<div class="test" style="margin-top: 2rem;"><span class="success">[READY]</span> All tests complete! Go to <strong>dsa-topic-dynamic.html?topic=Trees</strong></div>`);
+            document.getElementById('results').innerHTML = results.join('');
+          });
+      })
+      .catch(err => {
+        document.getElementById('results').innerHTML = `<div class="test"><span class="error">[ERROR]</span> Failed to load JSON: ${err}</div>`;
+      });
+  </script>
+</body>
+</html>

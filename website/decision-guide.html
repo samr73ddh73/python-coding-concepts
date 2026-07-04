@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decision Guide - Interview Prep Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-new.css">
+  <style>
+    .guide-container { max-width: 1000px; margin: 3rem auto; padding: 2rem; }
+    .guide-header { text-align: center; margin-bottom: 3rem; }
+    .guide-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .guide-section { margin-bottom: 3rem; }
+    .section-title { font-size: 1.8rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent-blue); }
+    .decision-tree { background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-lg); margin-bottom: 1.5rem; border-left: 4px solid var(--accent-blue); }
+    .tree-question { font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary); }
+    .tree-branch { margin-left: 2rem; margin-bottom: 1rem; padding: 0.75rem; background: var(--bg-primary); border-radius: var(--radius-md); }
+    .yes { border-left: 3px solid #10b981; padding-left: 1rem; }
+    .no { border-left: 3px solid #ef4444; padding-left: 1rem; }
+    .tree-answer { font-size: 0.95rem; line-height: 1.6; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+    .comparison-table th { background: var(--bg-secondary); padding: 1rem; text-align: left; font-weight: 600; border: 1px solid var(--border-color); }
+    .comparison-table td { padding: 1rem; border: 1px solid var(--border-color); }
+    .comparison-table tr:hover { background: var(--bg-secondary); }
+    @media (max-width: 768px) {
+      .guide-container { padding: 1rem; }
+      .guide-header h1 { font-size: 1.8rem; }
+      .comparison-table { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index-new.html" class="logo">
+        <span class="logo-icon">λ</span>
+        <span class="logo-text">Interview Hub</span>
+      </a>
+      <div class="nav-items">
+        <button class="nav-link" onclick="window.location.href='index-new.html#dsa'">Back to DSA</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="guide-container">
+    <div class="guide-header">
+      <h1>🌳 Algorithm Decision Guide</h1>
+      <p>Quick flowcharts to choose the right algorithm for your problem</p>
+    </div>
+
+    <!-- ARRAY PROBLEMS -->
+    <div class="guide-section">
+      <h2 class="section-title">Array Problems</h2>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Is the array sorted?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Consider Binary Search variants, Two-Pointer, or Sliding Window</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Check if you need in-place modification or can use extra space</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Need in-place O(1) space?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Two-Pointer technique or track write position</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Hash Map, Sorting, or Prefix Sum allowed</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Finding pairs/sum combinations?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Two-Pointer (sorted) or Hash Map (unsorted)</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Check for range queries or subarray patterns</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TREE PROBLEMS -->
+    <div class="guide-section">
+      <h2 class="section-title">Tree Problems</h2>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Is it a path problem (root to leaf)?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ DFS PreOrder with backtracking. Track path as you go down.</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Check if height/depth related</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Height, diameter, or balance related?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ DFS PostOrder. Get results from children FIRST, then process.</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Check if level-wise operations needed</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Level-wise operations?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ BFS with Queue. Process nodes level by level.</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Default to DFS (simpler recursion)</div>
+        </div>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Traversal</th>
+            <th>Order</th>
+            <th>Best For</th>
+            <th>When to Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>PreOrder</strong></td>
+            <td>Root → Left → Right</td>
+            <td>Copies, Serialization</td>
+            <td>Process node before children</td>
+          </tr>
+          <tr>
+            <td><strong>InOrder</strong></td>
+            <td>Left → Root → Right</td>
+            <td>BST validation, Sorted</td>
+            <td>Node between children</td>
+          </tr>
+          <tr>
+            <td><strong>PostOrder</strong></td>
+            <td>Left → Right → Root</td>
+            <td>Height, Diameter, LCA</td>
+            <td>Process children before parent</td>
+          </tr>
+          <tr>
+            <td><strong>Level Order</strong></td>
+            <td>Level by level</td>
+            <td>Level-wise ops, Shortest</td>
+            <td>Queue-based horizontal scan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- GRAPH PROBLEMS -->
+    <div class="guide-section">
+      <h2 class="section-title">Graph Problems</h2>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Shortest path?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Unweighted: BFS | Weighted (+): Dijkstra | Negative weights: Bellman-Ford</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Check if cycle detection needed</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Detect cycle?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Directed: DFS with state (white/gray/black) | Undirected: DFS with parent tracking</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Just traversal needed?</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Need to explore all nodes?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ DFS if memory concern | BFS if level-wise needed</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Topological sort or specific pattern</div>
+        </div>
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Algorithm</th>
+            <th>Time</th>
+            <th>Use Case</th>
+            <th>Constraint</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>DFS</strong></td>
+            <td>O(V+E)</td>
+            <td>Cycles, Components, Paths</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td><strong>BFS</strong></td>
+            <td>O(V+E)</td>
+            <td>Shortest path (unweighted)</td>
+            <td>Unweighted only</td>
+          </tr>
+          <tr>
+            <td><strong>Dijkstra</strong></td>
+            <td>O((V+E) log V)</td>
+            <td>Shortest path (weighted)</td>
+            <td>Non-negative weights</td>
+          </tr>
+          <tr>
+            <td><strong>Bellman-Ford</strong></td>
+            <td>O(VE)</td>
+            <td>Shortest (any weights)</td>
+            <td>Slow, use only if needed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- LINKEDLIST PROBLEMS -->
+    <div class="guide-section">
+      <h2 class="section-title">LinkedList Problems</h2>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Cycle involved?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Floyd's Algorithm (slow & fast pointers). Time: O(n), Space: O(1)</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Check if position/node removal needed</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Position-based (nth element)?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Two-Pointer gap technique. Gap of n+1 to land BEFORE target.</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Check if modifying head itself</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Might remove head?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Use DUMMY NODE. dummy.next = head, return dummy.next</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Simple traversal and modification</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BINARY SEARCH PROBLEMS -->
+    <div class="guide-section">
+      <h2 class="section-title">Binary Search Problems</h2>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Array definitely sorted?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ Binary Search applicable</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Binary Search NOT applicable</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Looking for exact value or boundary?</div>
+        <div class="tree-branch yes">
+          <strong>✓ EXACT</strong>
+          <div class="tree-answer">→ while (left <= right), returns index or -1</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ BOUNDARY</strong>
+          <div class="tree-answer">→ while (left < right), leaves left at boundary (first/last)</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Answer space binary-searchable?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ BS on Answers. Define canDo() and search answer space, not array.</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Standard or rotated array search</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DP PROBLEMS -->
+    <div class="guide-section">
+      <h2 class="section-title">Dynamic Programming Problems</h2>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Problem has overlapping subproblems?</div>
+        <div class="tree-branch yes">
+          <strong>✓ YES</strong>
+          <div class="tree-answer">→ DP is applicable. Define state and recurrence.</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ NO</strong>
+          <div class="tree-answer">→ Divide & Conquer or Greedy might work</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ Memoization or Tabulation?</div>
+        <div class="tree-branch yes">
+          <strong>✓ MEMO</strong>
+          <div class="tree-answer">→ Top-Down. More intuitive. Recurse from goal to base.</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ TAB</strong>
+          <div class="tree-answer">→ Bottom-Up. More efficient. Build from base to goal.</div>
+        </div>
+      </div>
+
+      <div class="decision-tree">
+        <div class="tree-question">❓ One or two dimensions?</div>
+        <div class="tree-branch yes">
+          <strong>✓ ONE</strong>
+          <div class="tree-answer">→ 1D DP array or recursive memoization</div>
+        </div>
+        <div class="tree-branch no">
+          <strong>✗ TWO</strong>
+          <div class="tree-answer">→ 2D DP table (consider space optimization)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Interview Prep Hub • Make data-driven algorithm choices 🎯</p>
+    </div>
+  </footer>
+</body>
+</html>

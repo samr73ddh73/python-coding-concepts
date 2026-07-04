@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards - Interview Prep Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-new.css">
+  <style>
+    .flashcard-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+    }
+
+    .flashcard-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .flashcard-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flashcard-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin: 2rem 0;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+
+    .filters {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 0.75rem 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .filter-btn.active {
+      background: var(--accent-blue);
+      color: white;
+      border-color: var(--accent-blue);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent-blue);
+    }
+
+    .flashcard {
+      perspective: 1000px;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      min-height: 300px;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border-color);
+    }
+
+    .flashcard-front {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+      border-left: 5px solid var(--accent-blue);
+    }
+
+    .flashcard-back {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+      transform: rotateY(180deg);
+      border-left: 5px solid var(--accent-purple);
+      text-align: left;
+      overflow-y: auto;
+    }
+
+    .flashcard-topic {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .flashcard-question {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .flashcard-hint {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .flashcard-answer {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+    }
+
+    .flashcard-footer {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .code-snippet {
+      background: #1a1a1a;
+      padding: 0.8rem;
+      border-radius: var(--radius-md);
+      font-family: 'Monaco', monospace;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      margin: 0.5rem 0;
+      color: #e8e8e8;
+      line-height: 1.4;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      transition: width 0.3s;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-blue);
+    }
+
+    @media (max-width: 768px) {
+      .flashcard-container {
+        padding: 1rem;
+      }
+
+      .flashcard-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .flashcard-inner {
+        height: 250px;
+      }
+
+      .flashcard-question {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index-new.html" class="logo">
+        <span class="logo-icon">λ</span>
+        <span class="logo-text">Interview Hub</span>
+      </a>
+      <div class="nav-items">
+        <button class="nav-link" onclick="window.location.href='index-new.html#dsa'">Back to DSA</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="flashcard-container">
+    <div class="flashcard-header">
+      <h1>🎓 Study Flashcards</h1>
+      <p>Patterns, templates, and time complexities. Click to flip!</p>
+
+      <div class="flashcard-stats">
+        <div class="stat-item">
+          <div class="stat-number" id="totalCards">0</div>
+          <div class="stat-label">Total</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="currentCard">1</div>
+          <div class="stat-label">Current</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterCards('all')">All</button>
+      <button class="filter-btn" onclick="filterCards('array')">Array</button>
+      <button class="filter-btn" onclick="filterCards('trees')">Trees</button>
+      <button class="filter-btn" onclick="filterCards('graph')">Graph</button>
+      <button class="filter-btn" onclick="filterCards('linkedlist')">LinkedList</button>
+      <button class="filter-btn" onclick="filterCards('binarysearch')">Binary Search</button>
+      <button class="filter-btn" onclick="filterCards('dp')">DP</button>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Flashcard -->
+    <div id="cardsContainer"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="btn btn-secondary" onclick="previousCard()">← Previous</button>
+      <button class="btn btn-primary" onclick="nextCard()">Next →</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Interview Prep Hub • Master patterns with spaced repetition 🚀</p>
+    </div>
+  </footer>
+
+  <script>
+    const flashcardsData = [
+      // ARRAY PATTERNS
+      { topic: 'array', category: 'Pattern', question: 'Two-Pointer: When to use?', answer: 'Use two-pointers from opposite ends or same end when:\n• In-place modifications\n• Finding pairs with sum\n• Merging sorted arrays\n\nTime: O(n), Space: O(1)' },
+      { topic: 'array', category: 'Template', question: 'Two-Pointer Template', answer: 'let left = 0, right = arr.length - 1\nwhile (left < right) {\n  if (arr[left] + arr[right] == target)\n    return true\n  else if (arr[left] + arr[right] < target)\n    left++\n  else\n    right--\n}' },
+      { topic: 'array', category: 'Trick', question: 'Move Zeros In-Place?', answer: 'Track zeroIndex where next non-zero writes:\n• If zero: update zeroIndex\n• If non-zero: swap with zeroIndex\n• Increment zeroIndex\n\nTime: O(n), Space: O(1)' },
+      { topic: 'array', category: 'Pattern', question: 'Sliding Window: When?', answer: 'Use when:\n• Need contiguous subarray\n• Fixed or variable size window\n• Expand/contract based on condition\n\nExamples: Longest substring, Max sum\nTime: O(n), Space: O(k)' },
+      { topic: 'array', category: 'Trick', question: 'Prefix Sum Trade-off?', answer: 'Precompute: O(n) time, O(n) space\nThen query: O(1) time\n\nprefix[i] = sum(0...i-1)\nrangeSum(L,R) = prefix[R+1] - prefix[L]' },
+
+      // TREE PATTERNS
+      { topic: 'trees', category: 'Pattern', question: 'PreOrder (Root→L→R): When?', answer: 'Use when:\n• Creating copies\n• Serialization\n• Path from root\n• Expression evaluation\n\nProcess node BEFORE children' },
+      { topic: 'trees', category: 'Pattern', question: 'PostOrder (L→R→Root): When?', answer: 'Use when:\n• Height/depth problems\n• Diameter\n• LCA (Lowest Common Ancestor)\n• Deletion\n\nGet answers from children FIRST' },
+      { topic: 'trees', category: 'Pattern', question: 'BFS Level Order: When?', answer: 'Use when:\n• Level-wise processing\n• Shortest path\n• Right/left view\n• Zigzag traversal\n\nProcess level by level with queue' },
+      { topic: 'trees', category: 'TimeComplexity', question: 'Tree Traversal Complexity?', answer: 'Time: O(n) - visit each node\nSpace: O(h) recursion stack\n  h = height\n  Balanced: h = log(n)\n  Skewed: h = n' },
+      { topic: 'trees', category: 'Problem', question: 'Check Balanced Tree?', answer: 'Return tuple: (is_balanced, height)\n\nFor each node:\n• Check children balanced\n• Check height diff ≤ 1\n• Return combined result\n\nAvoids recomputing heights' },
+      { topic: 'trees', category: 'Trick', question: 'PostOrder Return Pattern?', answer: 'def postorder(node):\n  if not node: return result\n  left = postorder(node.left)\n  right = postorder(node.right)\n  current = process(node, left, right)\n  return current' },
+
+      // GRAPH PATTERNS
+      { topic: 'graph', category: 'TimeComplexity', question: 'DFS vs BFS Time?', answer: 'Both: O(V + E)\nV = vertices, E = edges\n\nDFS: Space O(h) recursion\nBFS: Space O(w) queue\n\nChoose by problem, not time' },
+      { topic: 'graph', category: 'Pattern', question: 'Detect Cycle (Directed)?', answer: 'Use state tracking:\n0 = White (unvisited)\n1 = Gray (in path)\n2 = Black (done)\n\nIf reach gray node → cycle!' },
+      { topic: 'graph', category: 'Pattern', question: 'Multi-Source BFS?', answer: 'For "distance to nearest":\n1. Add ALL sources to queue\n2. Mark all as visited\n3. BFS simultaneously\n4. First time reaching = shortest' },
+      { topic: 'graph', category: 'Algorithm', question: 'Dijkstra\'s: When?', answer: 'Shortest path:\n• All edges non-negative\n• Uses min-heap\n• Time: O((V+E) log V)\n\nNOT for negative weights' },
+      { topic: 'graph', category: 'TimeComplexity', question: 'DFS Complexity?', answer: 'Time: O(V + E)\nSpace: O(V) visited + O(h) stack\n\nVisit each vertex + traverse each edge' },
+
+      // LINKEDLIST PATTERNS
+      { topic: 'linkedlist', category: 'Trick', question: 'Floyd\'s Cycle: 1 and 2?', answer: 'Slow 1 step, Fast 2 steps:\n• No cycle: fast → None\n• Cycle: meet at node\n\nWhy: They meet due to\nmodular arithmetic on cycle' },
+      { topic: 'linkedlist', category: 'Pattern', question: 'Find Cycle Start?', answer: 'After slow == fast:\n1. Reset slow to head\n2. Move both 1 step\n3. Meet at cycle start!\n\nWhy: Dist(head→start) = Dist(meet→start)' },
+      { topic: 'linkedlist', category: 'Trick', question: 'Remove Nth From End?', answer: 'Two-pointer gap n+1:\n1. Advance fast by n+1\n2. Move both until fast.next = None\n3. slow before target\n4. slow.next = slow.next.next' },
+      { topic: 'linkedlist', category: 'Pattern', question: 'Dummy Node: When?', answer: 'Use when:\n• Might remove head\n• Modifying head pointers\n• Merging lists\n\ndummy.next = head\n... operations ...\nreturn dummy.next' },
+      { topic: 'linkedlist', category: 'TimeComplexity', question: 'LL Operations?', answer: 'Traverse: O(n), O(1) space\nReverse: O(n), O(1)\nDetect: O(n), O(1)\nFind middle: O(n), O(1)\n\nMost are O(n)!' },
+      { topic: 'linkedlist', category: 'DataStructure', question: 'LRU Cache: What to use?', answer: 'HashMap + Doubly LL:\n• HashMap: O(1) access\n• LL: O(1) move to front\n\nAccess: move to head\nFull: remove tail' },
+
+      // BINARY SEARCH
+      { topic: 'binarysearch', category: 'Pattern', question: 'Boundary vs Match?', answer: 'Exact match: while (left <= right)\nBoundary: while (left < right)\n\nMatch: finds if exists\nBoundary: leaves left at boundary' },
+      { topic: 'binarysearch', category: 'Trick', question: 'Rotated Array: Key?', answer: 'One half ALWAYS sorted!\n\n• Compare mid with endpoints\n• Identify sorted half\n• If target there: go there\n• Else: go other way' },
+      { topic: 'binarysearch', category: 'Pattern', question: 'BS on Answer Space?', answer: 'Define canDo(x) function\nBinary search on answer, not array:\n• left = min, right = max\n• Check canDo(mid)\n• Shrink range\n\nTime: O(log answer)' },
+      { topic: 'binarysearch', category: 'Trick', question: 'Find Peak Element?', answer: 'Peak > both neighbors\nCompare mid with mid+1:\n• mid < mid+1: peak right\n• Else: peak left/mid\n\nTime: O(log n)!' },
+      { topic: 'binarysearch', category: 'TimeComplexity', question: 'BS Variants Time?', answer: 'Standard: O(log n)\nBS + process: O(n log n)\nBS answer: O(log ans * check)\nBS matrix: O(log(m*n))\n\nCore: always log n!' },
+
+      // DP PATTERNS
+      { topic: 'dp', category: 'Concept', question: 'When to use DP?', answer: 'When:\n1. Optimal substructure\n2. Overlapping subproblems\n\nIf both → DP efficient!' },
+      { topic: 'dp', category: 'Pattern', question: 'Memo vs Tabulation?', answer: 'Memo (Top-Down):\n• Recurse from goal\n• Cache in dict\n• Intuitive, stack risk\n\nTabulation (Bottom-Up):\n• Build from base\n• Fill table\n• Better space' },
+      { topic: 'dp', category: 'Template', question: 'Memoization Code?', answer: 'def solve(n, memo={}):\n  if n in memo: return memo[n]\n  if n <= 1: return n\n  result = solve(n-1) + solve(n-2)\n  memo[n] = result\n  return result' },
+      { topic: 'dp', category: 'Template', question: 'Tabulation Code?', answer: 'def solve(n):\n  dp = [0] * (n+1)\n  dp[0] = 1\n  for i in range(1, n+1):\n    dp[i] = dp[i-1] + dp[i-2]\n  return dp[n]' },
+      { topic: 'dp', category: 'Problem', question: '0/1 Knapsack State?', answer: 'dp[i][w] = max value\nfirst i items, capacity w\n\nFor each:\n• Include: dp[i-1][w-wt]+val\n• Exclude: dp[i-1][w]\n• Take max\n\nSpace: use 1D array' },
+
+      // GENERAL
+      { topic: 'array', category: 'Interview', question: 'Time Complexity Order?', answer: 'O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!)\n\nn=1000:\n• O(n²): 1M ✓\n• O(2ⁿ): ✗' },
+      { topic: 'trees', category: 'Interview', question: 'DFS or BFS First?', answer: 'Path-based → DFS\nLevel-wise → BFS\nHeight → PostOrder\nSum from root → PreOrder\n\nDefault: DFS simpler' },
+      { topic: 'graph', category: 'Interview', question: 'Shortest Path Choice?', answer: 'Unweighted → BFS\nWeighted (+) → Dijkstra\nWeighted (±) → Bellman-Ford\nAll pairs → Floyd-W' },
+    ];
+
+    let currentFilter = 'all';
+    let currentCardIndex = 0;
+    let filteredCards = [];
+
+    function initializeCards() {
+      document.getElementById('totalCards').textContent = flashcardsData.length;
+      filterCards('all');
+    }
+
+    function filterCards(topic) {
+      currentFilter = topic;
+      filteredCards = topic === 'all' ? flashcardsData : flashcardsData.filter(c => c.topic === topic);
+      currentCardIndex = 0;
+      updateActiveFilter();
+      renderCard();
+      updateProgress();
+    }
+
+    function updateActiveFilter() {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`[onclick="filterCards('${currentFilter}')"]`).classList.add('active');
+    }
+
+    function renderCard() {
+      const container = document.getElementById('cardsContainer');
+      if (filteredCards.length === 0) {
+        container.innerHTML = '<p style="text-align: center; font-size: 1.2rem;">No cards</p>';
+        return;
+      }
+
+      const card = filteredCards[currentCardIndex];
+      container.innerHTML = `
+        <div class="flashcard" id="card" onclick="toggleFlip()">
+          <div class="flashcard-inner">
+            <div class="flashcard-face flashcard-front">
+              <div class="flashcard-topic">${card.topic.toUpperCase()} • ${card.category}</div>
+              <div class="flashcard-question">${card.question}</div>
+              <div class="flashcard-hint">Click to reveal →</div>
+            </div>
+            <div class="flashcard-face flashcard-back">
+              <div class="flashcard-answer">${card.answer}</div>
+              <div class="flashcard-footer">← Click to flip</div>
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById('currentCard').textContent = currentCardIndex + 1;
+    }
+
+    function toggleFlip() {
+      document.getElementById('card').classList.toggle('flipped');
+    }
+
+    function nextCard() {
+      if (currentCardIndex < filteredCards.length - 1) {
+        currentCardIndex++;
+        document.getElementById('card').classList.remove('flipped');
+        renderCard();
+        updateProgress();
+      }
+    }
+
+    function previousCard() {
+      if (currentCardIndex > 0) {
+        currentCardIndex--;
+        document.getElementById('card').classList.remove('flipped');
+        renderCard();
+        updateProgress();
+      }
+    }
+
+    function updateProgress() {
+      const progress = (currentCardIndex + 1) / filteredCards.length * 100;
+      document.getElementById('progressFill').style.width = progress + '%';
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeCards);
+    } else {
+      initializeCards();
+    }
+  </script>
+</body>
+</html>

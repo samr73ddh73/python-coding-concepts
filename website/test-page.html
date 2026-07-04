@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test JSON Loading</title>
+</head>
+<body>
+  <h1>Testing Data Load</h1>
+  <div id="result"></div>
+  
+  <script>
+    fetch('all-data.json')
+      .then(r => r.json())
+      .then(data => {
+        const topics = Object.keys(data);
+        const arrayData = data['Array'];
+        const treeData = data['Trees'];
+        const graphData = data['Graph'];
+        
+        let html = '<pre>';
+        html += 'Topics loaded: ' + topics.join(', ') + '\n\n';
+        html += 'Array: ' + arrayData.problems.length + ' problems, ' + arrayData.notes.length + ' notes\n';
+        html += 'Trees: ' + treeData.problems.length + ' problems, ' + treeData.notes.length + ' notes\n';
+        html += 'Graph: ' + graphData.problems.length + ' problems, ' + graphData.notes.length + ' notes\n';
+        
+        if (data['DP'] && data['DP'].categories) {
+          html += '\nDP Categories:\n';
+          for (const cat in data['DP'].categories) {
+            html += '  - ' + cat + ': ' + data['DP'].categories[cat].problems.length + ' problems\n';
+          }
+        }
+        
+        html += '</pre>';
+        document.getElementById('result').innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById('result').innerHTML = '<pre>ERROR: ' + err + '</pre>';
+      });
+  </script>
+</body>
+</html>

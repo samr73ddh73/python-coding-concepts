@@ -1,0 +1,810 @@
+[
+  {
+    "id": "tip_array_0",
+    "type": "concept",
+    "category": "Array - From Notes",
+    "front": "From Notes: **Key Tips:**...",
+    "back": "**Key Tips:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_array_1",
+    "type": "concept",
+    "category": "Array - From Notes",
+    "front": "From Notes: **Key Points:**...",
+    "back": "**Key Points:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_array_2",
+    "type": "concept",
+    "category": "Array - From Notes",
+    "front": "From Notes: **Key Insight:**...",
+    "back": "**Key Insight:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_array_3",
+    "type": "concept",
+    "category": "Array - From Notes",
+    "front": "From Notes: **Key:** Start from **end** to avoid overwriting; ...",
+    "back": "**Key:** Start from **end** to avoid overwriting; leftover from nums2 needs copy only",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_array_4",
+    "type": "concept",
+    "category": "Array - From Notes",
+    "front": "From Notes: ⚠️...",
+    "back": "⚠️",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_array_5",
+    "type": "concept",
+    "category": "Array - From Notes",
+    "front": "From Notes: 💡...",
+    "back": "💡",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_trees_6",
+    "type": "concept",
+    "category": "Trees - Algorithm Choice",
+    "front": "Algorithm Choice: WHEN TO USE EACH...",
+    "back": "WHEN TO USE EACH",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_trees_7",
+    "type": "concept",
+    "category": "Trees - From Notes",
+    "front": "From Notes: **Key tricks:**...",
+    "back": "**Key tricks:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_trees_8",
+    "type": "concept",
+    "category": "Trees - From Notes",
+    "front": "From Notes: **Key:** Preorder gives root, Inorder gives left/r...",
+    "back": "**Key:** Preorder gives root, Inorder gives left/right split",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_trees_9",
+    "type": "concept",
+    "category": "Trees - From Notes",
+    "front": "From Notes: **Key:** Postorder gives root, Inorder gives left/...",
+    "back": "**Key:** Postorder gives root, Inorder gives left/right split",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_trees_10",
+    "type": "concept",
+    "category": "Trees - From Notes",
+    "front": "From Notes: **Key:** Accumulate info as you go DOWN...",
+    "back": "**Key:** Accumulate info as you go DOWN",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_trees_11",
+    "type": "concept",
+    "category": "Trees - From Notes",
+    "front": "From Notes: **Key:** Get answers from CHILDREN first, then use...",
+    "back": "**Key:** Get answers from CHILDREN first, then use them",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_trees_12",
+    "type": "concept",
+    "category": "Trees - Optimization Technique",
+    "front": "Optimization Technique: TRICK: Removing nodes from tree...",
+    "back": "TRICK: Removing nodes from tree",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_trees_13",
+    "type": "concept",
+    "category": "Trees - Remember",
+    "front": "Remember: remember this pattern...",
+    "back": "remember this pattern",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_14",
+    "type": "concept",
+    "category": "Graph - Edge Case",
+    "front": "Edge Case: Edge case: empty graph or invalid start...",
+    "back": "Edge case: empty graph or invalid start",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_15",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key Insight: pathVisited = nodes in current recu...",
+    "back": "**Key Insight: pathVisited = nodes in current recursion stack**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_16",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key Difference:**...",
+    "back": "**Key Difference:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_17",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key Insight:**...",
+    "back": "**Key Insight:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_18",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key Insight:** Add ALL sources first, then BFS f...",
+    "back": "**Key Insight:** Add ALL sources first, then BFS from all simultaneously",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_19",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: ⚠️ ONLY works for DAGs (Directed Acyclic Graphs)!...",
+    "back": "⚠️ ONLY works for DAGs (Directed Acyclic Graphs)!",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_20",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: ⚠️ Redundant/Incomplete...",
+    "back": "⚠️ Redundant/Incomplete",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_21",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key Points:**...",
+    "back": "**Key Points:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_22",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key Trick:**...",
+    "back": "**Key Trick:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_23",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: ⚠️...",
+    "back": "⚠️",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_24",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: 💡...",
+    "back": "💡",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_25",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key Points:**...",
+    "back": "**Key Points:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_26",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key Insight:**...",
+    "back": "**Key Insight:**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_27",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: ⚠️...",
+    "back": "⚠️",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_28",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: 💡...",
+    "back": "💡",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_29",
+    "type": "concept",
+    "category": "Graph - From Notes",
+    "front": "From Notes: **Key insight**: If problem asks for \"distance to ...",
+    "back": "**Key insight**: If problem asks for \"distance to nearest,\" expand from the nearest targets.",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_graph_30",
+    "type": "concept",
+    "category": "Graph - Important",
+    "front": "Important: METHOD 2: Iterative DFS with Explicit Stack (Impor...",
+    "back": "METHOD 2: Iterative DFS with Explicit Stack (Important!)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_31",
+    "type": "concept",
+    "category": "LinkedList - Always Think of Edge Cases Around the Head!",
+    "front": "Always Think of Edge Cases Around the Head!: When removing/modifying the head node, handle sepa...",
+    "back": "When removing/modifying the head node, handle separately or use **dummy node pattern**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_32",
+    "type": "concept",
+    "category": "LinkedList - Always Think of Edge Cases Around the Head!",
+    "front": "Always Think of Edge Cases Around the Head!: Dummy node simplifies head removal: `dummy = ListN...",
+    "back": "Dummy node simplifies head removal: `dummy = ListNode(0); dummy.next = head`",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_33",
+    "type": "concept",
+    "category": "LinkedList - Always Think of Edge Cases Around the Head!",
+    "front": "Always Think of Edge Cases Around the Head!: Use dummy when you might need to remove the head i...",
+    "back": "Use dummy when you might need to remove the head itself",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_34",
+    "type": "concept",
+    "category": "LinkedList - Two-Pointer Pattern for Linked Lists",
+    "front": "Two-Pointer Pattern for Linked Lists: Use n+1 gap (advance fast by n+1) to land slow **B...",
+    "back": "Use n+1 gap (advance fast by n+1) to land slow **BEFORE** target",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_35",
+    "type": "concept",
+    "category": "LinkedList - Two-Pointer Pattern for Linked Lists",
+    "front": "Two-Pointer Pattern for Linked Lists: Example: Remove nth from end → fast ahead by n+1, ...",
+    "back": "Example: Remove nth from end → fast ahead by n+1, then move both until fast reaches end",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_36",
+    "type": "concept",
+    "category": "LinkedList - Two-Pointer Pattern for Linked Lists",
+    "front": "Two-Pointer Pattern for Linked Lists: Key: Slow is at node BEFORE the one you want to mo...",
+    "back": "Key: Slow is at node BEFORE the one you want to modify",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_37",
+    "type": "concept",
+    "category": "LinkedList - Two-Pointer Pattern for Linked Lists",
+    "front": "Two-Pointer Pattern for Linked Lists: Detect cycle in linked list: slow moves 1 step, fa...",
+    "back": "Detect cycle in linked list: slow moves 1 step, fast moves 2 steps",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_38",
+    "type": "concept",
+    "category": "LinkedList - Two-Pointer Pattern for Linked Lists",
+    "front": "Two-Pointer Pattern for Linked Lists: If they meet, cycle exists; if fast reaches null, ...",
+    "back": "If they meet, cycle exists; if fast reaches null, no cycle",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_39",
+    "type": "concept",
+    "category": "LinkedList - Two-Pointer Pattern for Linked Lists",
+    "front": "Two-Pointer Pattern for Linked Lists: Time: O(n), Space: O(1)...",
+    "back": "Time: O(n), Space: O(1)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_40",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: After detecting cycle, reset one pointer to head...",
+    "back": "After detecting cycle, reset one pointer to head",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_41",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: Move both one step at a time...",
+    "back": "Move both one step at a time",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_42",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: They meet at cycle start...",
+    "back": "They meet at cycle start",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_43",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: **Empty list** (head = None)...",
+    "back": "**Empty list** (head = None)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_44",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: **Single node** (head.next = None)...",
+    "back": "**Single node** (head.next = None)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_45",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: **Two nodes**...",
+    "back": "**Two nodes**",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_46",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: **Remove head** (special case)...",
+    "back": "**Remove head** (special case)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_47",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: **Cycle in list** (infinite loop risk!)...",
+    "back": "**Cycle in list** (infinite loop risk!)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_48",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: **Disconnected lists** (operations on two separate...",
+    "back": "**Disconnected lists** (operations on two separate lists)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_linkedlist_49",
+    "type": "concept",
+    "category": "LinkedList - Cycle Detection",
+    "front": "Cycle Detection: **Duplicate values** (handling may matter)...",
+    "back": "**Duplicate values** (handling may matter)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_binarysearch_50",
+    "type": "concept",
+    "category": "BinarySearch - From Notes",
+    "front": "From Notes: **Key Difference:** `lo < hi` (not `<=`) and `hi =...",
+    "back": "**Key Difference:** `lo < hi` (not `<=`) and `hi = mid` (not `mid - 1`)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_binarysearch_51",
+    "type": "concept",
+    "category": "BinarySearch - From Notes",
+    "front": "From Notes: **Key Insight:** At least one half is always sorte...",
+    "back": "**Key Insight:** At least one half is always sorted; use that to navigate",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_binarysearch_52",
+    "type": "concept",
+    "category": "BinarySearch - From Notes",
+    "front": "From Notes: ⚠️...",
+    "back": "⚠️",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_binarysearch_53",
+    "type": "concept",
+    "category": "BinarySearch - From Notes",
+    "front": "From Notes: 💡...",
+    "back": "💡",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_54",
+    "type": "concept",
+    "category": "Heap - Heap Properties",
+    "front": "Heap Properties: **Min Heap:** Parent ≤ Children (smallest at root)...",
+    "back": "**Min Heap:** Parent ≤ Children (smallest at root)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_55",
+    "type": "concept",
+    "category": "Heap - Heap Properties",
+    "front": "Heap Properties: **Max Heap:** Parent ≥ Children (largest at root)...",
+    "back": "**Max Heap:** Parent ≥ Children (largest at root)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_56",
+    "type": "concept",
+    "category": "Heap - Heap Properties",
+    "front": "Heap Properties: Python's `heapq` is **min heap** by default...",
+    "back": "Python's `heapq` is **min heap** by default",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_57",
+    "type": "concept",
+    "category": "Heap - Heap Properties",
+    "front": "Heap Properties: Complete binary tree (except last level)...",
+    "back": "Complete binary tree (except last level)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_58",
+    "type": "concept",
+    "category": "Heap - Heap Properties",
+    "front": "Heap Properties: Operations: insert O(log n), extract min O(log n),...",
+    "back": "Operations: insert O(log n), extract min O(log n), heapify O(n)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_59",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: Build heap from scratch: `heapify()` is O(n)...",
+    "back": "Build heap from scratch: `heapify()` is O(n)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_60",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: Add to existing heap: `push()` is O(log n)...",
+    "back": "Add to existing heap: `push()` is O(log n)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_61",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: Don't rebuild heap unnecessarily!...",
+    "back": "Don't rebuild heap unnecessarily!",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_62",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: Single element heap...",
+    "back": "Single element heap",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_63",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: All same values...",
+    "back": "All same values",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_64",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: Duplicate elements...",
+    "back": "Duplicate elements",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_65",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: Negative numbers (for max heap negation)...",
+    "back": "Negative numbers (for max heap negation)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_66",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: Empty heap (pop from empty!)...",
+    "back": "Empty heap (pop from empty!)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_heap_67",
+    "type": "concept",
+    "category": "Heap - Common Patterns",
+    "front": "Common Patterns: Large k (k ≥ heap size)...",
+    "back": "Large k (k ≥ heap size)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_maps_68",
+    "type": "concept",
+    "category": "Maps - Pattern 3: Invert Keys and Values",
+    "front": "Pattern 3: Invert Keys and Values: Empty dictionary...",
+    "back": "Empty dictionary",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_maps_69",
+    "type": "concept",
+    "category": "Maps - Pattern 3: Invert Keys and Values",
+    "front": "Pattern 3: Invert Keys and Values: All same keys (overwrite)...",
+    "back": "All same keys (overwrite)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_maps_70",
+    "type": "concept",
+    "category": "Maps - Pattern 3: Invert Keys and Values",
+    "front": "Pattern 3: Invert Keys and Values: All unique keys...",
+    "back": "All unique keys",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_maps_71",
+    "type": "concept",
+    "category": "Maps - Pattern 3: Invert Keys and Values",
+    "front": "Pattern 3: Invert Keys and Values: Nested dictionaries...",
+    "back": "Nested dictionaries",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_maps_72",
+    "type": "concept",
+    "category": "Maps - Pattern 3: Invert Keys and Values",
+    "front": "Pattern 3: Invert Keys and Values: Dictionary as value/key considerations...",
+    "back": "Dictionary as value/key considerations",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_73",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: [ ] **Base case:** When do we stop recursing?...",
+    "back": "[ ] **Base case:** When do we stop recursing?",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_74",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: [ ] **Choice:** What are the possible choices at e...",
+    "back": "[ ] **Choice:** What are the possible choices at each step?",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_75",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: [ ] **Recursion:** Make choice, recurse, backtrack...",
+    "back": "[ ] **Recursion:** Make choice, recurse, backtrack",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_76",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: [ ] **Undo:** Always undo the choice (pop, remove,...",
+    "back": "[ ] **Undo:** Always undo the choice (pop, remove, etc.)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_77",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: [ ] **Copy result:** Use `path[:]` not `path`...",
+    "back": "[ ] **Copy result:** Use `path[:]` not `path`",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_78",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: [ ] **Pruning:** Can we cut branches early?...",
+    "back": "[ ] **Pruning:** Can we cut branches early?",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_79",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: [ ] **Duplicates:** Do we need to skip duplicates?...",
+    "back": "[ ] **Duplicates:** Do we need to skip duplicates?",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_80",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: [ ] **Constraints:** Are there constraints to vali...",
+    "back": "[ ] **Constraints:** Are there constraints to validate?",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_81",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: Permutations: O(n!)...",
+    "back": "Permutations: O(n!)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_82",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: Combinations: O(2^n)...",
+    "back": "Combinations: O(2^n)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_backtracking_83",
+    "type": "concept",
+    "category": "Backtracking - 4. Avoid Duplicates in Result",
+    "front": "4. Avoid Duplicates in Result: Subsets: O(2^n)...",
+    "back": "Subsets: O(2^n)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_greedy_84",
+    "type": "concept",
+    "category": "Greedy - 1. Greedy Choice Property",
+    "front": "1. Greedy Choice Property: Making locally optimal choice doesn't prevent glob...",
+    "back": "Making locally optimal choice doesn't prevent global optimum",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_greedy_85",
+    "type": "concept",
+    "category": "Greedy - 2. Optimal Substructure",
+    "front": "2. Optimal Substructure: Solution contains optimal solutions of subproblems...",
+    "back": "Solution contains optimal solutions of subproblems",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_greedy_86",
+    "type": "concept",
+    "category": "Greedy - When to Suspect Greedy Works",
+    "front": "When to Suspect Greedy Works: \"Maximum\" or \"minimum\" objective...",
+    "back": "\"Maximum\" or \"minimum\" objective",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_greedy_87",
+    "type": "concept",
+    "category": "Greedy - When to Suspect Greedy Works",
+    "front": "When to Suspect Greedy Works: Non-overlapping intervals...",
+    "back": "Non-overlapping intervals",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_greedy_88",
+    "type": "concept",
+    "category": "Greedy - When to Suspect Greedy Works",
+    "front": "When to Suspect Greedy Works: Earliest/latest time problems...",
+    "back": "Earliest/latest time problems",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_greedy_89",
+    "type": "concept",
+    "category": "Greedy - When to Suspect Greedy Works",
+    "front": "When to Suspect Greedy Works: Fractional problems (can take partial items)...",
+    "back": "Fractional problems (can take partial items)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_greedy_90",
+    "type": "concept",
+    "category": "Greedy - When to Suspect Greedy Works",
+    "front": "When to Suspect Greedy Works: Safe to \"use up\" resource (no backtracking)...",
+    "back": "Safe to \"use up\" resource (no backtracking)",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_sliding window_91",
+    "type": "concept",
+    "category": "Sliding window - From Notes",
+    "front": "From Notes: **Key Insight:** At each position, decide: should ...",
+    "back": "**Key Insight:** At each position, decide: should we extend the previous subarray or start fresh?",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_92",
+    "type": "concept",
+    "category": "BitManipulation - Find Single Element",
+    "front": "Find Single Element: All appear twice except one → XOR...",
+    "back": "All appear twice except one → XOR",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_93",
+    "type": "concept",
+    "category": "BitManipulation - Find Single Element",
+    "front": "Find Single Element: All appear k times except one → Count bits modulo ...",
+    "back": "All appear k times except one → Count bits modulo k",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_94",
+    "type": "concept",
+    "category": "BitManipulation - Power of Two",
+    "front": "Power of Two: Check power: `n & (n-1) == 0`...",
+    "back": "Check power: `n & (n-1) == 0`",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_95",
+    "type": "concept",
+    "category": "BitManipulation - Power of Two",
+    "front": "Power of Two: Next power: Find rightmost set bit...",
+    "back": "Next power: Find rightmost set bit",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_96",
+    "type": "concept",
+    "category": "BitManipulation - Subsets",
+    "front": "Subsets: Bit enumeration: Loop mask 0 to 2^n - 1...",
+    "back": "Bit enumeration: Loop mask 0 to 2^n - 1",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_97",
+    "type": "concept",
+    "category": "BitManipulation - Subsets",
+    "front": "Subsets: Each bit determines inclusion...",
+    "back": "Each bit determines inclusion",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_98",
+    "type": "concept",
+    "category": "BitManipulation - Number Properties",
+    "front": "Number Properties: Even/Odd: `n & 1`...",
+    "back": "Even/Odd: `n & 1`",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_99",
+    "type": "concept",
+    "category": "BitManipulation - Number Properties",
+    "front": "Number Properties: Rightmost set bit: `n & -n`...",
+    "back": "Rightmost set bit: `n & -n`",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": "tip_bitmanipulation_100",
+    "type": "concept",
+    "category": "BitManipulation - Number Properties",
+    "front": "Number Properties: Clear rightmost set bit: `n & (n-1)`...",
+    "back": "Clear rightmost set bit: `n & (n-1)`",
+    "difficulty": "intermediate"
+  }
+]

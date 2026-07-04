@@ -1,0 +1,1217 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-01",
+  "topics": [
+    {
+      "id": "array",
+      "name": "Array",
+      "problems": [
+        {
+          "name": "1-move-zeros.py",
+          "path": "Array/1-move-zeros.py",
+          "type": "implementation"
+        },
+        {
+          "name": "2-remove-duplicates.py",
+          "path": "Array/2-remove-duplicates.py",
+          "type": "implementation"
+        },
+        {
+          "name": "3-leader.py",
+          "path": "Array/3-leader.py",
+          "type": "implementation"
+        },
+        {
+          "name": "4-find-duplicates.py",
+          "path": "Array/4-find-duplicates.py",
+          "type": "implementation"
+        },
+        {
+          "name": "5-x-smallest-number.py",
+          "path": "Array/5-x-smallest-number.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "From Notes",
+          "text": "**Key Tips:**",
+          "topic": "Array"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Points:**",
+          "topic": "Array"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Insight:**",
+          "topic": "Array"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key:** Start from **end** to avoid overwriting; leftover from nums2 needs copy only",
+          "topic": "Array"
+        },
+        {
+          "category": "From Notes",
+          "text": "⚠️",
+          "topic": "Array"
+        },
+        {
+          "category": "From Notes",
+          "text": "💡",
+          "topic": "Array"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "TIPS-AND-TRICKS.md",
+          "two-pointer-pattern.md"
+        ]
+      }
+    },
+    {
+      "id": "trees",
+      "name": "Trees",
+      "problems": [
+        {
+          "name": "10-max-depth.py",
+          "path": "Trees/10-max-depth.py",
+          "type": "implementation"
+        },
+        {
+          "name": "11-check-balance-tree.py",
+          "path": "Trees/11-check-balance-tree.py",
+          "type": "implementation"
+        },
+        {
+          "name": "12-diameter.py",
+          "path": "Trees/12-diameter.py",
+          "type": "implementation"
+        },
+        {
+          "name": "13-path-sum.py",
+          "path": "Trees/13-path-sum.py",
+          "type": "implementation"
+        },
+        {
+          "name": "14-sum-root-to-leaf.py",
+          "path": "Trees/14-sum-root-to-leaf.py",
+          "type": "implementation"
+        },
+        {
+          "name": "15-insufficient-nodes.py",
+          "path": "Trees/15-insufficient-nodes.py",
+          "type": "implementation"
+        },
+        {
+          "name": "16-LCA.py",
+          "path": "Trees/16-LCA.py",
+          "type": "implementation"
+        },
+        {
+          "name": "17-BST.py",
+          "path": "Trees/17-BST.py",
+          "type": "implementation"
+        },
+        {
+          "name": "17-maxDiff.py",
+          "path": "Trees/17-maxDiff.py",
+          "type": "implementation"
+        },
+        {
+          "name": "2-traversal.py",
+          "path": "Trees/2-traversal.py",
+          "type": "implementation"
+        },
+        {
+          "name": "3-level-order.py",
+          "path": "Trees/3-level-order.py",
+          "type": "implementation"
+        },
+        {
+          "name": "4-zig-zag.py",
+          "path": "Trees/4-zig-zag.py",
+          "type": "implementation"
+        },
+        {
+          "name": "5-odd-even.py",
+          "path": "Trees/5-odd-even.py",
+          "type": "implementation"
+        },
+        {
+          "name": "6-tree-construction.py",
+          "path": "Trees/6-tree-construction.py",
+          "type": "implementation"
+        },
+        {
+          "name": "7-build-tree-1.py",
+          "path": "Trees/7-build-tree-1.py",
+          "type": "implementation"
+        },
+        {
+          "name": "8-max-binary-tree.py",
+          "path": "Trees/8-max-binary-tree.py",
+          "type": "implementation"
+        },
+        {
+          "name": "9-construct-bst.py",
+          "path": "Trees/9-construct-bst.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "Algorithm Choice",
+          "text": "WHEN TO USE EACH",
+          "topic": "Trees"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key tricks:**",
+          "topic": "Trees"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key:** Preorder gives root, Inorder gives left/right split",
+          "topic": "Trees"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key:** Postorder gives root, Inorder gives left/right split",
+          "topic": "Trees"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key:** Accumulate info as you go DOWN",
+          "topic": "Trees"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key:** Get answers from CHILDREN first, then use them",
+          "topic": "Trees"
+        },
+        {
+          "category": "Optimization Technique",
+          "text": "TRICK: Removing nodes from tree",
+          "topic": "Trees"
+        },
+        {
+          "category": "Remember",
+          "text": "remember this pattern",
+          "topic": "Trees"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "0-1.Theory.md",
+          "0-patterns-cheatsheet.md",
+          "pattern.md",
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "graph",
+      "name": "Graph",
+      "problems": [
+        {
+          "name": "1-representation.py",
+          "path": "Graph/1-representation.py",
+          "type": "implementation"
+        },
+        {
+          "name": "10-bipartide-graph.py",
+          "path": "Graph/10-bipartide-graph.py",
+          "type": "implementation"
+        },
+        {
+          "name": "11-topological-sort.py",
+          "path": "Graph/11-topological-sort.py",
+          "type": "implementation"
+        },
+        {
+          "name": "12-kahns.py",
+          "path": "Graph/12-kahns.py",
+          "type": "implementation"
+        },
+        {
+          "name": "13.shortest-path-topo.py",
+          "path": "Graph/13.shortest-path-topo.py",
+          "type": "implementation"
+        },
+        {
+          "name": "14.shortest-path-bfs.py",
+          "path": "Graph/14.shortest-path-bfs.py",
+          "type": "implementation"
+        },
+        {
+          "name": "15.djkstras.py",
+          "path": "Graph/15.djkstras.py",
+          "type": "implementation"
+        },
+        {
+          "name": "16-djkstras.py",
+          "path": "Graph/16-djkstras.py",
+          "type": "implementation"
+        },
+        {
+          "name": "17-shortestpath-matrix.py",
+          "path": "Graph/17-shortestpath-matrix.py",
+          "type": "implementation"
+        },
+        {
+          "name": "18-min-effort.py",
+          "path": "Graph/18-min-effort.py",
+          "type": "implementation"
+        },
+        {
+          "name": "19-cheapest-flight.py",
+          "path": "Graph/19-cheapest-flight.py",
+          "type": "implementation"
+        },
+        {
+          "name": "2-connected-components.py",
+          "path": "Graph/2-connected-components.py",
+          "type": "implementation"
+        },
+        {
+          "name": "21-snake-ladders.py",
+          "path": "Graph/21-snake-ladders.py",
+          "type": "implementation"
+        },
+        {
+          "name": "22-disjoint-set.py",
+          "path": "Graph/22-disjoint-set.py",
+          "type": "implementation"
+        },
+        {
+          "name": "3-bfs-practice.py",
+          "path": "Graph/3-bfs-practice.py",
+          "type": "implementation"
+        },
+        {
+          "name": "3-bfs.py",
+          "path": "Graph/3-bfs.py",
+          "type": "implementation"
+        },
+        {
+          "name": "4.dfs.py",
+          "path": "Graph/4.dfs.py",
+          "type": "implementation"
+        },
+        {
+          "name": "5-rotten-oranges.py",
+          "path": "Graph/5-rotten-oranges.py",
+          "type": "implementation"
+        },
+        {
+          "name": "6-flood-filling.py",
+          "path": "Graph/6-flood-filling.py",
+          "type": "implementation"
+        },
+        {
+          "name": "7-detect-cycle-in-directed.py",
+          "path": "Graph/7-detect-cycle-in-directed.py",
+          "type": "implementation"
+        },
+        {
+          "name": "8-detect-cycle-undirected-bfs.py",
+          "path": "Graph/8-detect-cycle-undirected-bfs.py",
+          "type": "implementation"
+        },
+        {
+          "name": "8-detect-cycle-undirected-dfs.py",
+          "path": "Graph/8-detect-cycle-undirected-dfs.py",
+          "type": "implementation"
+        },
+        {
+          "name": "9-01-Matrix.py",
+          "path": "Graph/9-01-Matrix.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "Edge Case",
+          "text": "Edge case: empty graph or invalid start",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Insight: pathVisited = nodes in current recursion stack**",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Difference:**",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Insight:**",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Insight:** Add ALL sources first, then BFS from all simultaneously",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "⚠️ ONLY works for DAGs (Directed Acyclic Graphs)!",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "⚠️ Redundant/Incomplete",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Points:**",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Trick:**",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "⚠️",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "💡",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Points:**",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Insight:**",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "⚠️",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "💡",
+          "topic": "Graph"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key insight**: If problem asks for \"distance to nearest,\" expand from the nearest targets.",
+          "topic": "Graph"
+        },
+        {
+          "category": "Important",
+          "text": "METHOD 2: Iterative DFS with Explicit Stack (Important!)",
+          "topic": "Graph"
+        }
+      ],
+      "decisionTree": {
+        "exists": true,
+        "description": "Decision tree for algorithm selection",
+        "source": "DECISION-TREE.md"
+      },
+      "files": {
+        "notes": [
+          "0-DSU-notes.md",
+          "00-MASTER-PATTERNS.md",
+          "20-when-to-use-bfs-dfs.md",
+          "BFS-pattern.md",
+          "DECISION-TREE.md",
+          "DFS-pattern.md",
+          "multisource-bfs-pattern.md",
+          "patterns.md",
+          "TIPS-AND-TRICKS.md",
+          "word-ladder-pattern.md"
+        ]
+      }
+    },
+    {
+      "id": "linkedlist",
+      "name": "LinkedList",
+      "problems": [
+        {
+          "name": "DeleteAtnth.py",
+          "path": "LinkedList/DeleteAtnth.py",
+          "type": "implementation"
+        },
+        {
+          "name": "Floyds-cycle-detection.py",
+          "path": "LinkedList/Floyds-cycle-detection.py",
+          "type": "implementation"
+        },
+        {
+          "name": "LRU-optimized.py",
+          "path": "LinkedList/LRU-optimized.py",
+          "type": "implementation"
+        },
+        {
+          "name": "LRU.py",
+          "path": "LinkedList/LRU.py",
+          "type": "implementation"
+        },
+        {
+          "name": "Reverse.py",
+          "path": "LinkedList/Reverse.py",
+          "type": "implementation"
+        },
+        {
+          "name": "detect-cycle-start.py",
+          "path": "LinkedList/detect-cycle-start.py",
+          "type": "implementation"
+        },
+        {
+          "name": "floyd-application.py",
+          "path": "LinkedList/floyd-application.py",
+          "type": "implementation"
+        },
+        {
+          "name": "implement.py",
+          "path": "LinkedList/implement.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "Always Think of Edge Cases Around the Head!",
+          "text": "When removing/modifying the head node, handle separately or use **dummy node pattern**",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Always Think of Edge Cases Around the Head!",
+          "text": "Dummy node simplifies head removal: `dummy = ListNode(0); dummy.next = head`",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Always Think of Edge Cases Around the Head!",
+          "text": "Use dummy when you might need to remove the head itself",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Two-Pointer Pattern for Linked Lists",
+          "text": "Use n+1 gap (advance fast by n+1) to land slow **BEFORE** target",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Two-Pointer Pattern for Linked Lists",
+          "text": "Example: Remove nth from end → fast ahead by n+1, then move both until fast reaches end",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Two-Pointer Pattern for Linked Lists",
+          "text": "Key: Slow is at node BEFORE the one you want to modify",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Two-Pointer Pattern for Linked Lists",
+          "text": "Detect cycle in linked list: slow moves 1 step, fast moves 2 steps",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Two-Pointer Pattern for Linked Lists",
+          "text": "If they meet, cycle exists; if fast reaches null, no cycle",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Two-Pointer Pattern for Linked Lists",
+          "text": "Time: O(n), Space: O(1)",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "After detecting cycle, reset one pointer to head",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "Move both one step at a time",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "They meet at cycle start",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "**Empty list** (head = None)",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "**Single node** (head.next = None)",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "**Two nodes**",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "**Remove head** (special case)",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "**Cycle in list** (infinite loop risk!)",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "**Disconnected lists** (operations on two separate lists)",
+          "topic": "LinkedList"
+        },
+        {
+          "category": "Cycle Detection",
+          "text": "**Duplicate values** (handling may matter)",
+          "topic": "LinkedList"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "binarysearch",
+      "name": "BinarySearch",
+      "problems": [
+        {
+          "name": "1.binary-search.py",
+          "path": "BinarySearch/1.binary-search.py",
+          "type": "implementation"
+        },
+        {
+          "name": "10-bs-on-answers.py",
+          "path": "BinarySearch/10-bs-on-answers.py",
+          "type": "implementation"
+        },
+        {
+          "name": "2.search-index.py",
+          "path": "BinarySearch/2.search-index.py",
+          "type": "implementation"
+        },
+        {
+          "name": "3-binary-search-matrix.py",
+          "path": "BinarySearch/3-binary-search-matrix.py",
+          "type": "implementation"
+        },
+        {
+          "name": "4-rotated-sorted-array.py",
+          "path": "BinarySearch/4-rotated-sorted-array.py",
+          "type": "implementation"
+        },
+        {
+          "name": "5-min-in-rotated-sorted-array.py",
+          "path": "BinarySearch/5-min-in-rotated-sorted-array.py",
+          "type": "implementation"
+        },
+        {
+          "name": "6-min-in-rotated-duplicate.py",
+          "path": "BinarySearch/6-min-in-rotated-duplicate.py",
+          "type": "implementation"
+        },
+        {
+          "name": "7-find-single-element.py",
+          "path": "BinarySearch/7-find-single-element.py",
+          "type": "implementation"
+        },
+        {
+          "name": "8-peak-element.py",
+          "path": "BinarySearch/8-peak-element.py",
+          "type": "implementation"
+        },
+        {
+          "name": "9-unbounded-case.py",
+          "path": "BinarySearch/9-unbounded-case.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "From Notes",
+          "text": "**Key Difference:** `lo < hi` (not `<=`) and `hi = mid` (not `mid - 1`)",
+          "topic": "BinarySearch"
+        },
+        {
+          "category": "From Notes",
+          "text": "**Key Insight:** At least one half is always sorted; use that to navigate",
+          "topic": "BinarySearch"
+        },
+        {
+          "category": "From Notes",
+          "text": "⚠️",
+          "topic": "BinarySearch"
+        },
+        {
+          "category": "From Notes",
+          "text": "💡",
+          "topic": "BinarySearch"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "0-patterns.md",
+          "binary-search-code-pattern.md",
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "strings",
+      "name": "Strings",
+      "problems": [
+        {
+          "name": "1-leetcode.py",
+          "path": "Strings/1-leetcode.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "notes.md"
+        ]
+      }
+    },
+    {
+      "id": "heap",
+      "name": "Heap",
+      "problems": [],
+      "tips": [
+        {
+          "category": "Heap Properties",
+          "text": "**Min Heap:** Parent ≤ Children (smallest at root)",
+          "topic": "Heap"
+        },
+        {
+          "category": "Heap Properties",
+          "text": "**Max Heap:** Parent ≥ Children (largest at root)",
+          "topic": "Heap"
+        },
+        {
+          "category": "Heap Properties",
+          "text": "Python's `heapq` is **min heap** by default",
+          "topic": "Heap"
+        },
+        {
+          "category": "Heap Properties",
+          "text": "Complete binary tree (except last level)",
+          "topic": "Heap"
+        },
+        {
+          "category": "Heap Properties",
+          "text": "Operations: insert O(log n), extract min O(log n), heapify O(n)",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "Build heap from scratch: `heapify()` is O(n)",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "Add to existing heap: `push()` is O(log n)",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "Don't rebuild heap unnecessarily!",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "Single element heap",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "All same values",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "Duplicate elements",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "Negative numbers (for max heap negation)",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "Empty heap (pop from empty!)",
+          "topic": "Heap"
+        },
+        {
+          "category": "Common Patterns",
+          "text": "Large k (k ≥ heap size)",
+          "topic": "Heap"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "Theory.md",
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "maps",
+      "name": "Maps",
+      "problems": [
+        {
+          "name": "0-dict-operations.py",
+          "path": "Maps/0-dict-operations.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "Pattern 3: Invert Keys and Values",
+          "text": "Empty dictionary",
+          "topic": "Maps"
+        },
+        {
+          "category": "Pattern 3: Invert Keys and Values",
+          "text": "All same keys (overwrite)",
+          "topic": "Maps"
+        },
+        {
+          "category": "Pattern 3: Invert Keys and Values",
+          "text": "All unique keys",
+          "topic": "Maps"
+        },
+        {
+          "category": "Pattern 3: Invert Keys and Values",
+          "text": "Nested dictionaries",
+          "topic": "Maps"
+        },
+        {
+          "category": "Pattern 3: Invert Keys and Values",
+          "text": "Dictionary as value/key considerations",
+          "topic": "Maps"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "notes.md",
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "backtracking",
+      "name": "Backtracking",
+      "problems": [
+        {
+          "name": "1-subset.py",
+          "path": "Backtracking/1-subset.py",
+          "type": "implementation"
+        },
+        {
+          "name": "2-subset-with-dup.py",
+          "path": "Backtracking/2-subset-with-dup.py",
+          "type": "implementation"
+        },
+        {
+          "name": "3-k-swaps.py",
+          "path": "Backtracking/3-k-swaps.py",
+          "type": "implementation"
+        },
+        {
+          "name": "4-increasing-order-num.py",
+          "path": "Backtracking/4-increasing-order-num.py",
+          "type": "implementation"
+        },
+        {
+          "name": "permutation.py",
+          "path": "Backtracking/permutation.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "[ ] **Base case:** When do we stop recursing?",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "[ ] **Choice:** What are the possible choices at each step?",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "[ ] **Recursion:** Make choice, recurse, backtrack",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "[ ] **Undo:** Always undo the choice (pop, remove, etc.)",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "[ ] **Copy result:** Use `path[:]` not `path`",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "[ ] **Pruning:** Can we cut branches early?",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "[ ] **Duplicates:** Do we need to skip duplicates?",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "[ ] **Constraints:** Are there constraints to validate?",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "Permutations: O(n!)",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "Combinations: O(2^n)",
+          "topic": "Backtracking"
+        },
+        {
+          "category": "4. Avoid Duplicates in Result",
+          "text": "Subsets: O(2^n)",
+          "topic": "Backtracking"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "pattern.md",
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "greedy",
+      "name": "Greedy",
+      "problems": [],
+      "tips": [
+        {
+          "category": "1. Greedy Choice Property",
+          "text": "Making locally optimal choice doesn't prevent global optimum",
+          "topic": "Greedy"
+        },
+        {
+          "category": "2. Optimal Substructure",
+          "text": "Solution contains optimal solutions of subproblems",
+          "topic": "Greedy"
+        },
+        {
+          "category": "When to Suspect Greedy Works",
+          "text": "\"Maximum\" or \"minimum\" objective",
+          "topic": "Greedy"
+        },
+        {
+          "category": "When to Suspect Greedy Works",
+          "text": "Non-overlapping intervals",
+          "topic": "Greedy"
+        },
+        {
+          "category": "When to Suspect Greedy Works",
+          "text": "Earliest/latest time problems",
+          "topic": "Greedy"
+        },
+        {
+          "category": "When to Suspect Greedy Works",
+          "text": "Fractional problems (can take partial items)",
+          "topic": "Greedy"
+        },
+        {
+          "category": "When to Suspect Greedy Works",
+          "text": "Safe to \"use up\" resource (no backtracking)",
+          "topic": "Greedy"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "theory.md",
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "sliding-window",
+      "name": "Sliding window",
+      "problems": [
+        {
+          "name": "01-maxSubArraySum.py",
+          "path": "Sliding window/01-maxSubArraySum.py",
+          "type": "implementation"
+        },
+        {
+          "name": "02-numOfSubArrays.py",
+          "path": "Sliding window/02-numOfSubArrays.py",
+          "type": "implementation"
+        },
+        {
+          "name": "03-DNA.py",
+          "path": "Sliding window/03-DNA.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "From Notes",
+          "text": "**Key Insight:** At each position, decide: should we extend the previous subarray or start fresh?",
+          "topic": "Sliding window"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "pattern.md",
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "dp",
+      "name": "DP",
+      "problems": [
+        {
+          "name": "Combination-sum.py",
+          "path": "DP/Combination-sum.py",
+          "type": "implementation"
+        },
+        {
+          "name": "wildcard.py",
+          "path": "DP/wildcard.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [],
+      "decisionTree": {
+        "exists": true,
+        "description": "Decision tree for algorithm selection",
+        "source": "DECISION-TREE.md"
+      },
+      "files": {
+        "notes": [
+          "0-patterns.md",
+          "DECISION-TREE.md",
+          "TIME_COMPLEXITY_GUIDE.md"
+        ]
+      }
+    },
+    {
+      "id": "mergeintervals",
+      "name": "MergeIntervals",
+      "problems": [
+        {
+          "name": "1-merge-intervals.py",
+          "path": "MergeIntervals/1-merge-intervals.py",
+          "type": "implementation"
+        },
+        {
+          "name": "2-insert-interval.py",
+          "path": "MergeIntervals/2-insert-interval.py",
+          "type": "implementation"
+        },
+        {
+          "name": "3-line-sweep.py",
+          "path": "MergeIntervals/3-line-sweep.py",
+          "type": "implementation"
+        },
+        {
+          "name": "4-erase-overlapping-interval.py",
+          "path": "MergeIntervals/4-erase-overlapping-interval.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "concept.md"
+        ]
+      }
+    },
+    {
+      "id": "bitmanipulation",
+      "name": "BitManipulation",
+      "problems": [
+        {
+          "name": "1-missing-number.py",
+          "path": "BitManipulation/1-missing-number.py",
+          "type": "implementation"
+        },
+        {
+          "name": "3-pattern2.py",
+          "path": "BitManipulation/3-pattern2.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [
+        {
+          "category": "Find Single Element",
+          "text": "All appear twice except one → XOR",
+          "topic": "BitManipulation"
+        },
+        {
+          "category": "Find Single Element",
+          "text": "All appear k times except one → Count bits modulo k",
+          "topic": "BitManipulation"
+        },
+        {
+          "category": "Power of Two",
+          "text": "Check power: `n & (n-1) == 0`",
+          "topic": "BitManipulation"
+        },
+        {
+          "category": "Power of Two",
+          "text": "Next power: Find rightmost set bit",
+          "topic": "BitManipulation"
+        },
+        {
+          "category": "Subsets",
+          "text": "Bit enumeration: Loop mask 0 to 2^n - 1",
+          "topic": "BitManipulation"
+        },
+        {
+          "category": "Subsets",
+          "text": "Each bit determines inclusion",
+          "topic": "BitManipulation"
+        },
+        {
+          "category": "Number Properties",
+          "text": "Even/Odd: `n & 1`",
+          "topic": "BitManipulation"
+        },
+        {
+          "category": "Number Properties",
+          "text": "Rightmost set bit: `n & -n`",
+          "topic": "BitManipulation"
+        },
+        {
+          "category": "Number Properties",
+          "text": "Clear rightmost set bit: `n & (n-1)`",
+          "topic": "BitManipulation"
+        }
+      ],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "resources.md",
+          "TIPS-AND-TRICKS.md"
+        ]
+      }
+    },
+    {
+      "id": "recursion",
+      "name": "Recursion",
+      "problems": [
+        {
+          "name": "find-all-strings.py",
+          "path": "Recursion/find-all-strings.py",
+          "type": "implementation"
+        },
+        {
+          "name": "find-prime.py",
+          "path": "Recursion/find-prime.py",
+          "type": "implementation"
+        },
+        {
+          "name": "generate-all-subsets.py",
+          "path": "Recursion/generate-all-subsets.py",
+          "type": "implementation"
+        },
+        {
+          "name": "generate-paranthesis.py",
+          "path": "Recursion/generate-paranthesis.py",
+          "type": "implementation"
+        },
+        {
+          "name": "pow(a,b).py",
+          "path": "Recursion/pow(a,b).py",
+          "type": "implementation"
+        },
+        {
+          "name": "sort-stack-using-recursion.py",
+          "path": "Recursion/sort-stack-using-recursion.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "01-theory.md"
+        ]
+      }
+    },
+    {
+      "id": "cyclic-sort",
+      "name": "Cyclic Sort",
+      "problems": [],
+      "tips": [],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "when-to-use.md"
+        ]
+      }
+    },
+    {
+      "id": "range-query",
+      "name": "Range-Query",
+      "problems": [
+        {
+          "name": "01-segment-tree.py",
+          "path": "Range-Query/01-segment-tree.py",
+          "type": "implementation"
+        },
+        {
+          "name": "03-min-deletion.py",
+          "path": "Range-Query/03-min-deletion.py",
+          "type": "implementation"
+        }
+      ],
+      "tips": [],
+      "decisionTree": null,
+      "files": {
+        "notes": [
+          "02-binary-index-tree.md"
+        ]
+      }
+    }
+  ],
+  "metadata": {}
+}

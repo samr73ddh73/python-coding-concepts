@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic - Interview Prep Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-new.css">
+  <link rel="stylesheet" href="topic-style.css">
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index-new.html" class="logo">
+        <span class="logo-icon">λ</span>
+        <span class="logo-text">Interview Hub</span>
+      </a>
+      <div class="nav-items">
+        <button class="nav-link" onclick="window.location.href='index-new.html#dsa'">Back to DSA</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Topic Header -->
+  <section class="topic-hero">
+    <div class="hero-container">
+      <button class="back-link" onclick="window.history.back()">← Back</button>
+      <div class="hero-content">
+        <div class="hero-icon" id="topicIcon">📊</div>
+        <div>
+          <h1 id="topicTitle">Array</h1>
+          <p id="topicDescription">Master fundamental array operations and patterns</p>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number" id="statProblems">5</div>
+          <div class="stat-label">Problems</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" id="statTips">6</div>
+          <div class="stat-label">Tips</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="topic-main">
+    <div class="topic-container">
+
+      <!-- Sidebar Navigation -->
+      <aside class="topic-sidebar">
+        <nav class="sidebar-nav">
+          <button class="nav-item active" data-section="overview">
+            <span class="nav-icon">📖</span>
+            <span>Overview</span>
+          </button>
+          <button class="nav-item" data-section="tips">
+            <span class="nav-icon">💡</span>
+            <span>Tips & Patterns</span>
+          </button>
+          <button class="nav-item" data-section="problems">
+            <span class="nav-icon">🧩</span>
+            <span>Problems</span>
+          </button>
+          <button class="nav-item" data-section="decision">
+            <span class="nav-icon">🌳</span>
+            <span>Decision Tree</span>
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Content Area -->
+      <div class="topic-content">
+
+        <!-- Overview Section -->
+        <section class="content-section active" id="overview">
+          <h2>Overview</h2>
+          <div class="overview-grid">
+            <div class="overview-card">
+              <h3>Core Patterns</h3>
+              <div class="pattern-list" id="patternList">
+                <span class="pattern-tag">Two-Pointer</span>
+                <span class="pattern-tag">Sliding Window</span>
+                <span class="pattern-tag">Prefix Sum</span>
+              </div>
+            </div>
+            <div class="overview-card">
+              <h3>Key Concepts</h3>
+              <ul class="concept-list">
+                <li>In-place modification</li>
+                <li>Space optimization</li>
+                <li>Time complexity tradeoffs</li>
+              </ul>
+            </div>
+            <div class="overview-card">
+              <h3>When to Use</h3>
+              <ul class="concept-list">
+                <li>✓ In-place modification required</li>
+                <li>✓ Need O(1) space</li>
+                <li>✓ Array is sorted or sortable</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section class="content-section" id="tips">
+          <h2>Tips & Patterns</h2>
+          <div class="tips-container" id="tipsContainer">
+            <div class="tip-card">
+              <div class="tip-label">Pattern</div>
+              <h3>Two-Pointer Technique</h3>
+              <p>Use two pointers traversing from different directions or at different speeds for in-place modifications with O(1) space.</p>
+              <div class="tip-meta">Time: O(n) | Space: O(1)</div>
+            </div>
+
+            <div class="tip-card">
+              <div class="tip-label warning">Important</div>
+              <h3>Always Handle Edge Cases</h3>
+              <p>Don't forget: Check for empty arrays, single elements, and boundary conditions in your solution.</p>
+            </div>
+
+            <div class="tip-card">
+              <div class="tip-label">Trick</div>
+              <h3>Modify Right-to-Left</h3>
+              <p>When deleting elements in-place, modify from right to left to avoid index shifting issues.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Problems Section -->
+        <section class="content-section" id="problems">
+          <h2>Problems</h2>
+          <div class="problems-container" id="problemsContainer">
+            <div class="problem-card">
+              <div class="problem-header">
+                <h3>Move Zeros</h3>
+                <span class="difficulty easy">Easy</span>
+              </div>
+              <p class="problem-description">Move all zeros to the end while maintaining order of non-zero elements.</p>
+              <div class="problem-meta">
+                <span class="pattern-tag">Two-Pointer</span>
+              </div>
+              <button class="btn-view">View Solution →</button>
+            </div>
+
+            <div class="problem-card">
+              <div class="problem-header">
+                <h3>Remove Duplicates</h3>
+                <span class="difficulty easy">Easy</span>
+              </div>
+              <p class="problem-description">Remove duplicates from sorted array in-place with O(1) space.</p>
+              <div class="problem-meta">
+                <span class="pattern-tag">Two-Pointer</span>
+              </div>
+              <button class="btn-view">View Solution →</button>
+            </div>
+
+            <div class="problem-card">
+              <div class="problem-header">
+                <h3>Find Leaders in Array</h3>
+                <span class="difficulty medium">Medium</span>
+              </div>
+              <p class="problem-description">Find all elements greater than all elements to their right.</p>
+              <div class="problem-meta">
+                <span class="pattern-tag">One-Pass</span>
+              </div>
+              <button class="btn-view">View Solution →</button>
+            </div>
+
+            <div class="problem-card">
+              <div class="problem-header">
+                <h3>Find Duplicates</h3>
+                <span class="difficulty medium">Medium</span>
+              </div>
+              <p class="problem-description">Find all duplicate elements in array without extra space.</p>
+              <div class="problem-meta">
+                <span class="pattern-tag">Array as Hash</span>
+              </div>
+              <button class="btn-view">View Solution →</button>
+            </div>
+
+            <div class="problem-card">
+              <div class="problem-header">
+                <h3>K Smallest Elements</h3>
+                <span class="difficulty">Hard</span>
+              </div>
+              <p class="problem-description">Find k smallest elements efficiently.</p>
+              <div class="problem-meta">
+                <span class="pattern-tag">Heap</span>
+                <span class="pattern-tag">QuickSelect</span>
+              </div>
+              <button class="btn-view">View Solution →</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Decision Tree Section -->
+        <section class="content-section" id="decision">
+          <h2>Decision Tree</h2>
+          <div class="decision-tree">
+            <div class="tree-node root">
+              <div class="node-content">Array Problem?</div>
+            </div>
+            <div class="tree-connections">
+              <div class="tree-node">
+                <div class="node-content">Modify In-Place?</div>
+              </div>
+            </div>
+            <div class="tree-leaf">
+              <div class="leaf-content">
+                <strong>→ Two-Pointer</strong>
+                <p>O(1) space, O(n) time</p>
+              </div>
+            </div>
+          </div>
+          <div class="tree-guide">
+            <h3>When to use each pattern:</h3>
+            <ul>
+              <li><strong>Two-Pointer:</strong> In-place modifications, sorted arrays</li>
+              <li><strong>Sliding Window:</strong> Fixed/variable window conditions</li>
+              <li><strong>Prefix Sum:</strong> Range queries, cumulative operations</li>
+              <li><strong>Hash Map:</strong> O(1) lookups, frequency counting</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Interview Prep Hub • Built for your success</p>
+    </div>
+  </footer>
+
+  <script src="assets/data/dsa.json"></script>
+  <script>
+    // Load topic based on URL query
+    const params = new URLSearchParams(window.location.search);
+    const topicId = params.get('topic');
+
+    // Navigation
+    document.querySelectorAll('.nav-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.section).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
