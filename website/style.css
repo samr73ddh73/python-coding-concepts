@@ -862,23 +862,212 @@ html, body {
 
 /* ── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  :root { --panel-w: 100vw; }
+  :root {
+    --panel-w: 100vw;
+    --header-h: 60px;
+  }
 
   .main-layout { flex-direction: column; }
 
   .map-area {
-    height: 55vh;
+    height: 40vh;
     flex: none;
   }
 
   .detail-panel {
     width: 100%;
-    height: 45vh;
+    height: 60vh;
     border-left: none;
     border-top: 1px solid var(--border);
+    overflow-y: auto;
   }
 
   .stats-bar { display: none; }
+
+  .header-left {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  /* Section tabs */
+  .section-btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 12px !important;
+  }
+
+  /* Panel content padding and font sizes */
+  .topic-header {
+    padding: 14px 16px 0;
+  }
+
+  .topic-name {
+    font-size: 20px;
+  }
+
+  .panel-scroll {
+    overflow-y: auto;
+    padding: 12px;
+  }
+
+  /* Section titles */
+  .section-label {
+    font-size: 13px;
+  }
+
+  /* Problems grid */
+  .problems-grid {
+    gap: 12px;
+  }
+
+  .problem-card {
+    padding: 12px;
+  }
+
+  /* Buttons */
+  .btn-lc, .btn-ghost-sm {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  /* Explore button */
+  #exploreTopicLink {
+    display: inline-block;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Tips list */
+  .tips-list li {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .header {
+    padding: 8px 12px;
+  }
+
+  .header-left {
+    gap: 6px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .header-subtitle {
+    display: none;
+  }
+
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .map-area {
+    height: 35vh;
+  }
+
+  .detail-panel {
+    height: 65vh;
+  }
+
+  .topic-header {
+    padding: 12px 14px 0;
+  }
+
+  .topic-hero {
+    gap: 10px;
+  }
+
+  .topic-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .topic-name {
+    font-size: 18px;
+  }
+
+  .panel-empty {
+    padding: 24px 16px;
+  }
+
+  .empty-orb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .section-label {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .badge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .problem-card {
+    padding: 10px;
+  }
+
+  .problem-name {
+    font-size: 13px;
+  }
+
+  .problem-file {
+    font-size: 11px;
+  }
+
+  .view-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  #exploreTopicLink {
+    padding: 12px 14px !important;
+    font-size: 12px !important;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    max-width: 100vw;
+    width: 95vw;
+    padding: 16px;
+    max-height: 85vh;
+  }
+
+  .modal-header {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+
+  .modal-title {
+    font-size: 14px;
+  }
+
+  .code-block {
+    padding: 10px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════
