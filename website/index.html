@@ -98,11 +98,19 @@
 
       <!-- Empty State -->
       <div class="panel-empty" id="panelEmpty">
-        <div class="empty-orb"></div>
-        <h3>Select a topic</h3>
-        <p>Click any node in the mind map to explore its problems, patterns, and tips.</p>
-        <div class="empty-topics-preview" id="emptyTopicsPreview">
-          <!-- Filled by JS with quick-access chips -->
+        <!-- Desktop: Mind map hint -->
+        <div id="desktopEmpty" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 12px;">
+          <div class="empty-orb"></div>
+          <h3>Select a topic</h3>
+          <p>Click any node in the mind map to explore its problems, patterns, and tips.</p>
+          <div class="empty-topics-preview" id="emptyTopicsPreview">
+            <!-- Filled by JS with quick-access chips -->
+          </div>
+        </div>
+        <!-- Mobile: Topics list with explore buttons -->
+        <div id="mobileTopicsView" style="display: none; width: 100%; overflow-y: auto; padding: 1rem; gap: 0.75rem; flex-direction: column;">
+          <h3 style="margin: 0 0 1rem 0; font-size: 16px;">All Topics</h3>
+          <div id="mobileTopicsGrid" style="display: grid; grid-template-columns: 1fr; gap: 12px;"></div>
         </div>
       </div>
 
