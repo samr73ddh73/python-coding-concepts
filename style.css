@@ -914,7 +914,9 @@ html, body {
 
   .panel-scroll {
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 12px;
+    flex: 1;
   }
 
   /* Section titles */
@@ -1007,6 +1009,17 @@ html, body {
 
   .panel-empty {
     padding: 24px 16px;
+    overflow-y: auto;
+  }
+
+  /* Mobile topics list styling */
+  #mobileTopicsView {
+    padding: 1rem !important;
+    gap: 12px !important;
+  }
+
+  #mobileTopicsGrid {
+    gap: 10px !important;
   }
 
   .empty-orb {
